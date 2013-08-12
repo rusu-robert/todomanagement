@@ -33,6 +33,8 @@ public:
 
 	void testSetters();
 
+	void testEqualOperator();
+
 	virtual ~ItemTest();
 };
 

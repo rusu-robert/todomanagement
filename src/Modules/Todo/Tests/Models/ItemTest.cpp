@@ -17,6 +17,9 @@ void ItemTest::runTests() {
 
 	this->testSetters();
 	cout<<"ItemTest::testSetters OK"<<endl;
+
+	this->testEqualOperator();
+	cout<<"ItemTest::testEqualOperator OK"<<endl;
 }
 
 void ItemTest::testConstructor() {
@@ -43,6 +46,13 @@ void ItemTest::testSetters() {
 	delete item;
 }
 
+void ItemTest::testEqualOperator() {
+	Item* firstItem = new Item(1, "firstName", "firstDescription", true);
+	Item* secondItem = new Item(1, "secondName", "secondDescription", false);
+	assert((*firstItem) == (*secondItem));
+	delete secondItem;
+	delete firstItem;
+}
 
 ItemTest::~ItemTest() {
 	cout<<"ItemTest ran all tests successfully"<<endl;

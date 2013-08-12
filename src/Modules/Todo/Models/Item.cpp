@@ -46,6 +46,13 @@ void Item::setIsCompleted(bool isCompleted) {
 	this->isCompleted = isCompleted;
 }
 
+bool Item::operator == (Item& newItem) {
+	if(this->id == newItem.id)
+		return true;
+	else
+		return false;
+}
+
 Item::~Item() {
 	// TODO Auto-generated destructor stub
 }

@@ -45,6 +45,8 @@ public:
 
 	void setIsCompleted(bool isCompleted);
 
+	bool operator == (Item &newItem);
+
 	virtual ~Item();
 };
 
