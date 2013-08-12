@@ -8,9 +8,34 @@
 #ifndef LIST_H_
 #define LIST_H_
 
+#include <vector>
+#include <iostream>
+#include "Item.h"
+
+using namespace std;
+
 class List {
+
+private:
+
+	int id;
+
+	string name;
+
+	vector<Item*> items;
+
 public:
+
 	List();
+
+	int getId();
+
+	void setId(int id);
+
+	string getName();
+
+	void setName(string name);
+
 	virtual ~List();
 };
 

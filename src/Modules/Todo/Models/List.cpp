@@ -8,8 +8,23 @@
 #include "List.h"
 
 List::List() {
-	// TODO Auto-generated constructor stub
 
+}
+
+int List::getId() {
+	return id;
+}
+
+void List::setId(int id) {
+	this->id = id;
+}
+
+string List::getName() {
+	return name;
+}
+
+void List::setName(string name) {
+	this->name = name;
 }
 
 List::~List() {

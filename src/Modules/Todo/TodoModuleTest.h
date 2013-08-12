@@ -10,6 +10,7 @@
 
 #include "Tests/Models/ItemTest.h"
 #include "Tests/Exceptions/ExceptionTest.h"
+#include "Tests/Models/ListTest.h"
 
 /**
  * This class holds reference to all

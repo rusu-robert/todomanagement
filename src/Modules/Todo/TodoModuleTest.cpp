@@ -19,6 +19,10 @@ void TodoModuleTest::runTests() {
 	ExceptionTest* exceptionTest = new ExceptionTest();
 	exceptionTest->runTests();
 	delete exceptionTest;
+
+	ListTest* listTest = new ListTest();
+	listTest->runTests();
+	delete listTest;
 }
 
 TodoModuleTest::~TodoModuleTest() {
