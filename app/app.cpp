@@ -8,8 +8,16 @@
 #include <iostream>
 using namespace std;
 
+#include "../src/Modules/ApplicationTest.h"
+
+void runTests() {
+	ApplicationTest* applicationTest = new ApplicationTest();
+	applicationTest->runTests();
+	delete applicationTest;
+}
+
 int main() {
-	cout<<"Hello World";
+	runTests();
 	return 0;
 }
 
