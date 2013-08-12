@@ -9,6 +9,7 @@
 #define TODOMODULETEST_H_
 
 #include "Tests/Models/ItemTest.h"
+#include "Tests/Exceptions/ExceptionTest.h"
 
 /**
  * This class holds reference to all
