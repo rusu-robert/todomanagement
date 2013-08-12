@@ -6,8 +6,7 @@
  */
 
 #include "Item.h"
-#include <iostream>
-#include <string>
+#include "../../Util/Models/TypeConvertor.h"
 
 using namespace std;
 
@@ -61,7 +60,7 @@ bool Item::operator == (Item& newItem) {
 
 string Item::toString() {
 	string itemString;
-	//itemString = to_string(id);
+	itemString = TypeConvertor::convertIntToString(id);
 	itemString += ";" + name + ";" + description + ";";
 	if(this->isCompleted == true) {
 		itemString += "1;";

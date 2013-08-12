@@ -68,6 +68,12 @@ void ItemTest::testEqualityOperatorWhenIdsAreDifferent() {
 	delete firstItem;
 }
 
+void ItemTest::testToString() {
+	Item* item = new Item(1, "name", "description", true);
+	assert(item->toString() == "1;name;description;1;");
+	delete item;
+}
+
 ItemTest::~ItemTest() {
 
 }
