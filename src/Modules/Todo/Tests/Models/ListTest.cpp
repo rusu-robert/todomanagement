@@ -15,7 +15,9 @@ ListTest::ListTest() {
 void ListTest::runTests() {
 	this->testSettersAndGetters();
 	cout<<"ListTest::testSettersAndGetters OK"<<endl;
+
 }
+
 void ListTest::testSettersAndGetters() {
 	List list = List();
 	list.setId(12);
