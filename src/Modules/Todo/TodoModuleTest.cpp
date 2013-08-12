@@ -8,7 +8,7 @@
 #include "TodoModuleTest.h"
 
 TodoModuleTest::TodoModuleTest() {
-	cout<<"TodoModuleTest started"<<endl;
+
 }
 
 void TodoModuleTest::runTests() {
@@ -22,6 +22,6 @@ void TodoModuleTest::runTests() {
 }
 
 TodoModuleTest::~TodoModuleTest() {
-	cout<<"TodoModuleTest ran all tests successfully"<<endl;
+
 }
 

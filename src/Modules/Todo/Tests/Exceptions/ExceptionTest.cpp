@@ -8,7 +8,7 @@
 #include "ExceptionTest.h"
 
 ExceptionTest::ExceptionTest() {
-	cout<<"ExceptionTest started"<<endl;
+
 }
 
 void ExceptionTest::runTests() {
@@ -23,6 +23,6 @@ void ExceptionTest::testConstructor() {
 }
 
 ExceptionTest::~ExceptionTest() {
-	cout<<"ExceptionTest ran all test succesfully"<<endl;
+
 }
 

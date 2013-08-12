@@ -8,7 +8,7 @@
 #include "ItemTest.h"
 
 ItemTest::ItemTest() {
-	cout<<"ItemTest started"<<endl;
+
 }
 
 void ItemTest::runTests() {
@@ -69,6 +69,6 @@ void ItemTest::testEqualityOperatorWhenIdsAreDifferent() {
 }
 
 ItemTest::~ItemTest() {
-	cout<<"ItemTest ran all tests successfully"<<endl;
+
 }
 

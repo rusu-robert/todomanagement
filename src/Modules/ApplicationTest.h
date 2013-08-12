@@ -9,6 +9,7 @@
 #define APPLICATIONTEST_H_
 
 #include "Todo/TodoModuleTest.h"
+#include "Util/UtilModuleTest.h"
 
 /**
  * This class holds reference to

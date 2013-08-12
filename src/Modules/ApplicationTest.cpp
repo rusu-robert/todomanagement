@@ -8,16 +8,20 @@
 #include "ApplicationTest.h"
 
 ApplicationTest::ApplicationTest() {
-	cout<<"ApplicationTest started"<<endl;
+
 }
 
 void ApplicationTest::runTests() {
 	TodoModuleTest* todoModuleTest = new TodoModuleTest();
 	todoModuleTest->runTests();
 	delete todoModuleTest;
+
+	UtilModuleTest* utilModuleTest = new UtilModuleTest();
+	utilModuleTest->runTests();
+	delete utilModuleTest;
 }
 
 ApplicationTest::~ApplicationTest() {
-	cout<<"ApplicationTest ran all tests successfully"<<endl;
+
 }
 
