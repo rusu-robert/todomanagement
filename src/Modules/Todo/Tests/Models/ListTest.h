@@ -23,6 +23,10 @@ public:
 
 	void testSettersAndGetters();
 
+	void testConnstructorWithParameters();
+
+	void testAddItem();
+
 	virtual ~ListTest();
 };
 

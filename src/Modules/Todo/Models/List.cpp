@@ -8,7 +8,15 @@
 #include "List.h"
 
 List::List() {
+	this->id = NULL;
+	this->name = "";
+	this->items = new vector<Item*>();
+}
 
+List::List(int id, string name) {
+	this->id = id;
+	this->name = name;
+	this->items = new vector<Item*>();
 }
 
 int List::getId() {
@@ -27,7 +35,19 @@ void List::setName(string name) {
 	this->name = name;
 }
 
+void List::addItem(int id, string name, string description, bool isCompleted) {
+	this->items->push_back(new Item(id, name, description, isCompleted));
+}
+
+int List::getNumberOfItems() {
+	return this->items->size();
+}
+
+
 List::~List() {
-	// TODO Auto-generated destructor stub
+	for(int i=0; i<this->items->size(); i++) {
+		delete (*this->items)[i];
+	}
+	delete this->items;
 }
 
