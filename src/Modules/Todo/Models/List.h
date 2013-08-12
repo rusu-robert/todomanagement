@@ -22,11 +22,13 @@ private:
 
 	string name;
 
-	vector<Item*> items;
+	vector<Item*>* items;
 
 public:
 
 	List();
+
+	List(int id, string name);
 
 	int getId();
 
@@ -35,6 +37,10 @@ public:
 	string getName();
 
 	void setName(string name);
+
+	void addItem(int id, string name, string description, bool isCompleted);
+
+	int getNumberOfItems();
 
 	virtual ~List();
 };

@@ -16,6 +16,14 @@ void ListTest::runTests() {
 	this->testSettersAndGetters();
 	cout<<"ListTest::testSettersAndGetters OK"<<endl;
 
+<<<<<<< HEAD
+=======
+	this->testConnstructorWithParameters();
+	cout<<"ListTest::testConnstructorWithParameters OK"<<endl;
+
+	this->testAddItem();
+	cout<<"ListTest::testAddItem OK"<<endl;
+>>>>>>> ad66e78c472b299dbbb11b7c66d5af1c27395b86
 }
 
 void ListTest::testSettersAndGetters() {
@@ -25,6 +33,22 @@ void ListTest::testSettersAndGetters() {
 
 	assert(list.getId() == 12);
 	assert(list.getName() == "listName");
+}
+
+void ListTest::testConnstructorWithParameters() {
+	List* list = new List(1, "name");
+
+	assert(list->getId() == 1);
+	assert(list->getName() == "name");
+	assert(list->getNumberOfItems() == 0);
+	delete list;
+}
+
+void ListTest::testAddItem() {
+	List* list = new List(1, "name");
+	list->addItem(1, "name", "description", true);
+	assert(list->getNumberOfItems() == 1);
+	delete list;
 }
 
 ListTest::~ListTest() {
