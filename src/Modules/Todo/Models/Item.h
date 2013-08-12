@@ -47,6 +47,8 @@ public:
 
 	bool operator == (Item &newItem);
 
+	string toString();
+
 	virtual ~Item();
 };
 

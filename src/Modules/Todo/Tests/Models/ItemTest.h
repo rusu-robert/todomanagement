@@ -35,6 +35,8 @@ public:
 
 	void testEqualOperator();
 
+	void testToString();
+
 	virtual ~ItemTest();
 };
 

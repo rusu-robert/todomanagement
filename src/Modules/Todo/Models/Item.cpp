@@ -6,6 +6,10 @@
  */
 
 #include "Item.h"
+#include <iostream>
+#include <string>
+
+using namespace std;
 
 Item::Item(int id, string name, string description, bool isCompleted) {
 	this->id = id;
@@ -47,10 +51,25 @@ void Item::setIsCompleted(bool isCompleted) {
 }
 
 bool Item::operator == (Item& newItem) {
-	if(this->id == newItem.id)
+	if(this->id == newItem.id) {
 		return true;
-	else
+	}
+	else {
 		return false;
+    }
+}
+
+string Item::toString() {
+	string itemString;
+	itemString = to_string(id);
+	itemString += ";" + name + ";" + description + ";";
+	if(this->isCompleted == true) {
+		itemString += "1;";
+	}
+	else {
+		itemString += "0;";
+	}
+	return itemString;
 }
 
 Item::~Item() {

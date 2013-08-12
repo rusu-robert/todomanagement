@@ -20,6 +20,9 @@ void ItemTest::runTests() {
 
 	this->testEqualOperator();
 	cout<<"ItemTest::testEqualOperator OK"<<endl;
+
+	this->testToString();
+	cout<<"ItemTest::testToString OK"<<endl;
 }
 
 void ItemTest::testConstructor() {
@@ -52,6 +55,13 @@ void ItemTest::testEqualOperator() {
 	assert((*firstItem) == (*secondItem));
 	delete secondItem;
 	delete firstItem;
+}
+
+void ItemTest::testToString() {
+	Item* item = new Item(1, "name", "description", true);
+	cout<<item->toString()<<endl;
+	//assert(item->toString() == "1;name;description;1;");
+	delete item;
 }
 
 ItemTest::~ItemTest() {
