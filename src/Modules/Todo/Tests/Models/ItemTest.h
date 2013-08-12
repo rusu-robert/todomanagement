@@ -33,7 +33,9 @@ public:
 
 	void testSetters();
 
-	void testEqualOperator();
+	void testEqualityOperatorWhenIdsAreTheSame();
+
+	void testEqualityOperatorWhenIdsAreDifferent();
 
 	void testToString();
 

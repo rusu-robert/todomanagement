@@ -61,7 +61,7 @@ bool Item::operator == (Item& newItem) {
 
 string Item::toString() {
 	string itemString;
-	itemString = to_string(id);
+	//itemString = to_string(id);
 	itemString += ";" + name + ";" + description + ";";
 	if(this->isCompleted == true) {
 		itemString += "1;";
