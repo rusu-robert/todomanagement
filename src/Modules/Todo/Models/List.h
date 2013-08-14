@@ -42,6 +42,8 @@ public:
 
 	int getNumberOfItems();
 
+	string toString();
+
 	virtual ~List();
 };
 

@@ -6,6 +6,7 @@
  */
 
 #include "List.h"
+#include "../../Util/Models/TypeConvertor.h"
 
 List::List() {
 	this->id = NULL;
@@ -43,6 +44,15 @@ int List::getNumberOfItems() {
 	return this->items->size();
 }
 
+string List::toString() {
+	string listString;
+	listString = TypeConvertor::convertIntToString(this->id);
+	listString += ";" + this->name + ";";
+	for(int i=0; i<this->items->size(); i++) {
+		listString += (*this->items)[i]->toString();
+	}
+	return listString;
+}
 
 List::~List() {
 	for(int i=0; i<this->items->size(); i++) {

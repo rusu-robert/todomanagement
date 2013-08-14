@@ -27,6 +27,8 @@ public:
 
 	void testAddItem();
 
+	void testTostring();
+
 	virtual ~ListTest();
 };
 

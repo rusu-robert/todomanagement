@@ -60,8 +60,8 @@ bool Item::operator == (Item& newItem) {
 
 string Item::toString() {
 	string itemString;
-	itemString = TypeConvertor::convertIntToString(id);
-	itemString += ";" + name + ";" + description + ";";
+	itemString = TypeConvertor::convertIntToString(this->id);
+	itemString += ";" + this->name + ";" + this->description + ";";
 	if(this->isCompleted == true) {
 		itemString += "1;";
 	}

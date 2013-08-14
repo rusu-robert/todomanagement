@@ -16,14 +16,15 @@ void ListTest::runTests() {
 	this->testSettersAndGetters();
 	cout<<"ListTest::testSettersAndGetters OK"<<endl;
 
-<<<<<<< HEAD
-=======
+
 	this->testConnstructorWithParameters();
 	cout<<"ListTest::testConnstructorWithParameters OK"<<endl;
 
 	this->testAddItem();
 	cout<<"ListTest::testAddItem OK"<<endl;
->>>>>>> ad66e78c472b299dbbb11b7c66d5af1c27395b86
+
+	this->testTostring();
+	cout<<"ListTest::testToString OK"<<endl;
 }
 
 void ListTest::testSettersAndGetters() {
@@ -51,6 +52,13 @@ void ListTest::testAddItem() {
 	delete list;
 }
 
+void ListTest::testTostring() {
+	List* list = new List(7, "listName");
+	list->addItem(1, "name", "description", true);
+	list->addItem(2, "anotherName", "anotherDescription", false);
+	assert(list->toString() == "7;listName;1;name;description;1;2;anotherName;anotherDescription;0;");
+	delete list;
+}
 ListTest::~ListTest() {
 	// TODO Auto-generated destructor stub
 }
