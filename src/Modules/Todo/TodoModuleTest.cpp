@@ -27,6 +27,10 @@ void TodoModuleTest::runTests() {
 	NotFoundExceptionTest* notFoundExceptionTest = new NotFoundExceptionTest();
 	notFoundExceptionTest->runTests();
 	delete notFoundExceptionTest;
+
+	ListRepositoryTest* listRepositoryTest = new ListRepositoryTest();
+	listRepositoryTest->runTests();
+	delete listRepositoryTest;
 }
 
 TodoModuleTest::~TodoModuleTest() {
