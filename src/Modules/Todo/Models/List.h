@@ -44,6 +44,8 @@ public:
 
 	string toString();
 
+	bool operator == (List& list);
+
 	virtual ~List();
 };
 

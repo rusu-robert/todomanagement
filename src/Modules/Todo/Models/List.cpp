@@ -54,6 +54,15 @@ string List::toString() {
 	return listString;
 }
 
+bool List::operator ==(List& list) {
+	if(this->id == list.id){
+		return true;
+	}
+	else{
+		return false;
+	}
+}
+
 List::~List() {
 	for(int i=0; i<this->items->size(); i++) {
 		delete (*this->items)[i];
