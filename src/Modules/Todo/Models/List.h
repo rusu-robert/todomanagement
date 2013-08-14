@@ -49,7 +49,7 @@ public:
 
 	void updateItem(int id, string name, string description, bool isCompleted) throw (NotFoundException);
 
-	Item* getItem(int position);
+	Item* findItemById(int id);
 
 	virtual ~List();
 };

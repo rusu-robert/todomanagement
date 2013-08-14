@@ -65,7 +65,7 @@ bool List::operator ==(List& list) {
 
 void List::updateItem(int id, string name, string description, bool isCompleted) throw (NotFoundException) {
 	int i = 0;
-	while(((*this->items)[i]->getId() != id) && (i != this->items->size())){
+	while(((*this->items)[i]->getId() != id) && (i != this->items->size())) {
 		i++;
 	}
 	if(i == this->items->size()) {
@@ -78,8 +78,12 @@ void List::updateItem(int id, string name, string description, bool isCompleted)
 	}
 }
 
-Item* List::getItem(int position) {
-	return (*this->items)[position];
+Item* List::findItemById(int id) {
+	int i = 0;
+	while(((*this->items)[i]->getId() != id) && (i != this->items->size())) {
+		i++;
+	}
+	return (*this->items)[i];
 }
 
 List::~List() {

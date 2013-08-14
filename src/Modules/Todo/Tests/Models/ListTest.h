@@ -33,7 +33,7 @@ public:
 
 	void testEqualityOperatorWhenIdsAreDifferent();
 
-	void testGetItem();
+	void testFindItemById();
 
 	void testUpdateItem();
 
