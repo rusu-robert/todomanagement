@@ -10,6 +10,7 @@
 
 #include "Tests/Models/ItemTest.h"
 #include "Tests/Exceptions/ExceptionTest.h"
+#include "Tests/Exceptions/NotFoundExceptionTest.h"
 #include "Tests/Models/ListTest.h"
 
 /**

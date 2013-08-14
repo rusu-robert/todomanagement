@@ -23,6 +23,10 @@ void TodoModuleTest::runTests() {
 	ListTest* listTest = new ListTest();
 	listTest->runTests();
 	delete listTest;
+
+	NotFoundExceptionTest* notFoundExceptionTest = new NotFoundExceptionTest();
+	notFoundExceptionTest->runTests();
+	delete notFoundExceptionTest;
 }
 
 TodoModuleTest::~TodoModuleTest() {

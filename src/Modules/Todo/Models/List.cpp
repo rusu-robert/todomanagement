@@ -63,6 +63,25 @@ bool List::operator ==(List& list) {
 	}
 }
 
+void List::updateItem(int id, string name, string description, bool isCompleted) throw (NotFoundException) {
+	int i = 0;
+	while(((*this->items)[i]->getId() != id) && (i != this->items->size())){
+		i++;
+	}
+	if(i == this->items->size()) {
+		throw NotFoundException("The item with this id doesn't exist!");
+	}
+	else {
+		(*this->items)[i]->setName(name);
+		(*this->items)[i]->setDescription(description);
+		(*this->items)[i]->setIsCompleted(isCompleted);
+	}
+}
+
+Item* List::getItem(int position) {
+	return (*this->items)[position];
+}
+
 List::~List() {
 	for(int i=0; i<this->items->size(); i++) {
 		delete (*this->items)[i];

@@ -31,6 +31,12 @@ void ListTest::runTests() {
 
 	this->testEqualityOperatorWhenIdsAreDifferent();
 	cout<<"ListTest::testEqualityOperatorWhenIdsAreDifferent OK"<<endl;
+
+	this->testGetItem();
+	cout<<"ListTest::testGetItem OK"<<endl;
+
+	this->testUpdateItem();
+	cout<<"ListTest::testUpdateItem OK"<<endl;
 }
 
 void ListTest::testSettersAndGetters() {
@@ -70,12 +76,35 @@ void ListTest::testEqualityOperatorWhenIdsAreTheSame() {
 	List* firstList = new List(1, "firstName");
 	List* secondList = new List(1, "secondName");
 	assert(((*firstList) == (*secondList)) == true);
+	delete secondList;
+	delete firstList;
 }
 
 void ListTest::testEqualityOperatorWhenIdsAreDifferent() {
 	List* firstList = new List(1, "firstName");
 	List* secondList = new List(2, "secondName");
 	assert(((*firstList) == (*secondList)) == false);
+	delete secondList;
+	delete firstList;
+}
+
+void ListTest::testGetItem() {
+	List* list = new List(1, "name");
+	list->addItem(1, "firstName", "firstDescription", true);
+	assert(list->getItem(0)->getId() == 1);
+	assert(list->getItem(0)->getName() == "firstName");
+	assert(list->getItem(0)->getDescription() == "firstDescription");
+	assert(list->getItem(0)->getIsCompleted() == true);
+}
+
+void ListTest::testUpdateItem() {
+	List* list = new List(1, "name");
+	list->addItem(1, "firstName", "firstDescription", true);
+	list->addItem(2, "secondName", "secondDescription", false);
+	list->updateItem(2, "modifiedName", "modifiedDescription", true);
+	assert(list->getItem(1)->getName() == "modifiedName");
+	assert(list->getItem(1)->getDescription() == "modifiedDescription");
+	assert(list->getItem(1)->getIsCompleted() == true);
 }
 
 ListTest::~ListTest() {

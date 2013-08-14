@@ -11,6 +11,7 @@
 #include <vector>
 #include <iostream>
 #include "Item.h"
+#include "../Exceptions/NotFoundException.h"
 
 using namespace std;
 
@@ -45,6 +46,10 @@ public:
 	string toString();
 
 	bool operator == (List& list);
+
+	void updateItem(int id, string name, string description, bool isCompleted) throw (NotFoundException);
+
+	Item* getItem(int position);
 
 	virtual ~List();
 };

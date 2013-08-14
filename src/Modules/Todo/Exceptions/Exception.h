@@ -21,9 +21,11 @@ private:
 
 public:
 
+	Exception();
+
 	Exception(string message);
 
-	string getMessage();
+	virtual string getMessage();
 
 	virtual ~Exception();
 };

@@ -7,6 +7,10 @@
 
 #include "Exception.h"
 
+Exception::Exception() {
+
+}
+
 Exception::Exception(string message) {
 	this->message = message;
 }

@@ -33,6 +33,10 @@ public:
 
 	void testEqualityOperatorWhenIdsAreDifferent();
 
+	void testGetItem();
+
+	void testUpdateItem();
+
 	virtual ~ListTest();
 };
 
