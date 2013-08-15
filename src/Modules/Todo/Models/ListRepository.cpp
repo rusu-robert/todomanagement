@@ -26,6 +26,10 @@ List* ListRepository::findById(int id) throw (NotFoundException) {
 	throw NotFoundException("List by given id doesn't exist!");
 }
 
+void ListRepository::edit(int id, string name) {
+	findById(id)->setName(name);
+}
+
 ListRepository::~ListRepository() {
 	for(int i=0; i<this->lists->size(); i++) {
 		delete (*this->lists)[i];

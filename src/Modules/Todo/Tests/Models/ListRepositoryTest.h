@@ -12,12 +12,15 @@
 #include "../../Models/ListRepository.h"
 
 class ListRepositoryTest {
+
 private:
 	void testAdd();
 
 	void testFindById();
 
 	void testFindByIdThrowsNotFoundException();
+
+	void testEdit();
 
 public:
 	ListRepositoryTest();

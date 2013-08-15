@@ -42,6 +42,16 @@ void ListRepositoryTest::testFindByIdThrowsNotFoundException() {
 	delete repository;
 }
 
+void ListRepositoryTest::testEdit() {
+	ListRepository* repository = new ListRepository();
+	repository->add(1, "firstList");
+	repository->add(2, "secondList");
+	repository->add(3, "thirdList");
+	repository->edit(2, "modifiedName");
+	assert(repository->findById(2)->getName() == "modifiedName");
+	delete repository;
+}
+
 void ListRepositoryTest::runTests() {
 	this->testAdd();
 	cout<<"ListRepositoryTest::testAdd OK"<<endl;
@@ -51,6 +61,9 @@ void ListRepositoryTest::runTests() {
 
 	this->testFindByIdThrowsNotFoundException();
 	cout<<"ListRepositoryTest::testFindByIdThrowsNotFoundException"<<endl;
+
+	this->testEdit();
+	cout<<"ListRepositoryTest::testEdit OK"<<endl;
 }
 
 ListRepositoryTest::~ListRepositoryTest() {

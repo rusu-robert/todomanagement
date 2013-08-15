@@ -29,6 +29,8 @@ public:
 
 	List* findById(int id)  throw (NotFoundException);
 
+	void edit(int id, string name);
+
 	virtual ~ListRepository();
 };
 

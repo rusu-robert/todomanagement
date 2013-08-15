@@ -27,6 +27,8 @@ public:
 	 */
 	virtual List* findById(int id) throw (NotFoundException) = 0;
 
+	virtual void edit(int id, string name) = 0;
+
 	virtual ~AbstractListRepository() {};
 };
 
