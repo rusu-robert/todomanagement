@@ -43,6 +43,9 @@ void ListTest::runTests() {
 
 	this->testFindPositionOfItemWithId();
 	cout<<"ListTest::testFindPositionOfItemWithId OK"<<endl;
+
+	this->testGetItems();
+	cout<<"ListTest::testGetItems OK"<<endl;
 }
 
 void ListTest::testSettersAndGetters() {
@@ -131,6 +134,15 @@ void ListTest::testFindPositionOfItemWithId() {
 	list->addItem(2, "secondName", "secondDescription", false);
 	assert(list->findPositionOfItemWithId(1) == 0);
 	assert(list->findPositionOfItemWithId(2) == 1);
+	delete list;
+}
+
+void ListTest::testGetItems() {
+	List* list = new List(1, "name");
+	list->addItem(1, "firstName", "firstDescription", true);
+	list->addItem(2, "secondName", "secondDescription", false);
+	assert(list->getItems()->size() == 2);
+	delete list;
 }
 
 ListTest::~ListTest() {

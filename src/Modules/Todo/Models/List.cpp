@@ -93,6 +93,10 @@ int List::findPositionOfItemWithId(int id) {
 	return i;
 }
 
+vector<Item*>* List::getItems() {
+	return this->items;
+}
+
 List::~List() {
 	for(int i=0; i<this->items->size(); i++) {
 		delete (*this->items)[i];

@@ -55,6 +55,8 @@ public:
 
 	int findPositionOfItemWithId(int id);
 
+	vector<Item*>* getItems();
+
 	virtual ~List();
 };
 
