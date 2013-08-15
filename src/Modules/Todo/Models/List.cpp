@@ -64,10 +64,7 @@ bool List::operator ==(List& list) {
 }
 
 void List::updateItem(int id, string name, string description, bool isCompleted) throw (NotFoundException) {
-	int i = 0;
-	while(((*this->items)[i]->getId() != id) && (i != this->items->size())) {
-		i++;
-	}
+	int i = findPositionOfItemWithId(id);
 	if(i == this->items->size()) {
 		throw NotFoundException("The item with this id doesn't exist!");
 	}
@@ -79,11 +76,21 @@ void List::updateItem(int id, string name, string description, bool isCompleted)
 }
 
 Item* List::findItemById(int id) {
+	int i = findPositionOfItemWithId(id);
+	return (*this->items)[i];
+}
+
+void List::deleteItem(int id) {
+	int i = findPositionOfItemWithId(id);
+	(*this->items).erase(this->items->begin() + i);
+}
+
+int List::findPositionOfItemWithId(int id) {
 	int i = 0;
 	while(((*this->items)[i]->getId() != id) && (i != this->items->size())) {
 		i++;
 	}
-	return (*this->items)[i];
+	return i;
 }
 
 List::~List() {

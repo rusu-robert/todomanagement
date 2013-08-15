@@ -51,6 +51,10 @@ public:
 
 	Item* findItemById(int id);
 
+	void deleteItem(int id);
+
+	int findPositionOfItemWithId(int id);
+
 	virtual ~List();
 };
 

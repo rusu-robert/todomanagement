@@ -37,6 +37,12 @@ void ListTest::runTests() {
 
 	this->testUpdateItem();
 	cout<<"ListTest::testUpdateItem OK"<<endl;
+
+	this->testDeleteItem();
+	cout<<"ListTest::testDeleteItem OK"<<endl;
+
+	this->testFindPositionOfItemWithId();
+	cout<<"ListTest::testFindPositionOfItemWithId OK"<<endl;
 }
 
 void ListTest::testSettersAndGetters() {
@@ -95,6 +101,7 @@ void ListTest::testFindItemById() {
 	assert(list->findItemById(1)->getName() == "firstName");
 	assert(list->findItemById(1)->getDescription() == "firstDescription");
 	assert(list->findItemById(1)->getIsCompleted() == true);
+	delete list;
 }
 
 void ListTest::testUpdateItem() {
@@ -105,6 +112,25 @@ void ListTest::testUpdateItem() {
 	assert(list->findItemById(2)->getName() == "modifiedName");
 	assert(list->findItemById(2)->getDescription() == "modifiedDescription");
 	assert(list->findItemById(2)->getIsCompleted() == true);
+	delete list;
+}
+
+void ListTest::testDeleteItem() {
+	List* list = new List(1, "name");
+	list->addItem(1, "firstName", "firstDescription", true);
+	list->addItem(2, "secondName", "secondDescription", false);
+	list->addItem(3, "thirdName", "thirdDescription", false);
+	list->deleteItem(2);
+	assert(list->getNumberOfItems() == 2);
+	delete list;
+}
+
+void ListTest::testFindPositionOfItemWithId() {
+	List* list = new List(1, "name");
+	list->addItem(1, "firstName", "firstDescription", true);
+	list->addItem(2, "secondName", "secondDescription", false);
+	assert(list->findPositionOfItemWithId(1) == 0);
+	assert(list->findPositionOfItemWithId(2) == 1);
 }
 
 ListTest::~ListTest() {

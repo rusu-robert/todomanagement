@@ -37,6 +37,10 @@ public:
 
 	void testUpdateItem();
 
+	void testDeleteItem();
+
+	void testFindPositionOfItemWithId();
+
 	virtual ~ListTest();
 };
 
