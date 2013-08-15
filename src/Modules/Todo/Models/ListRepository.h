@@ -31,6 +31,10 @@ public:
 
 	void edit(int id, string name);
 
+	void deleteList(int id) throw (NotFoundException);
+
+	int getNumberOfLists();
+
 	virtual ~ListRepository();
 };
 

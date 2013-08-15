@@ -52,6 +52,25 @@ void ListRepositoryTest::testEdit() {
 	delete repository;
 }
 
+void ListRepositoryTest::testDeleteList() {
+	ListRepository* repository = new ListRepository();
+	repository->add(1, "firstList");
+	repository->add(2, "secondList");
+	repository->add(3, "thirdList");
+	repository->deleteList(2);
+	assert(repository->getNumberOfLists() == 2);
+	delete repository;
+}
+
+void ListRepositoryTest::testGetNumberOfLists() {
+	ListRepository* repository = new ListRepository();
+	repository->add(1, "firstList");
+	repository->add(2, "secondList");
+	repository->add(3, "thirdList");
+	assert(repository->getNumberOfLists() == 3);
+	delete repository;
+}
+
 void ListRepositoryTest::runTests() {
 	this->testAdd();
 	cout<<"ListRepositoryTest::testAdd OK"<<endl;
@@ -64,6 +83,12 @@ void ListRepositoryTest::runTests() {
 
 	this->testEdit();
 	cout<<"ListRepositoryTest::testEdit OK"<<endl;
+
+	this->testGetNumberOfLists();
+	cout<<"ListRepositoryTest::testGetNumberOfLists OK"<<endl;
+
+	this->testDeleteList();
+	cout<<"ListRepositoryTest::testDeleteList OK"<<endl;
 }
 
 ListRepositoryTest::~ListRepositoryTest() {

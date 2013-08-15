@@ -29,6 +29,8 @@ public:
 
 	virtual void edit(int id, string name) = 0;
 
+	virtual void deleteList(int id) = 0;
+
 	virtual ~AbstractListRepository() {};
 };
 

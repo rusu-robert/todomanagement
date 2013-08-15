@@ -22,7 +22,12 @@ private:
 
 	void testEdit();
 
+	void testDeleteList();
+
+	void testGetNumberOfLists();
+
 public:
+
 	ListRepositoryTest();
 
 	void runTests();
