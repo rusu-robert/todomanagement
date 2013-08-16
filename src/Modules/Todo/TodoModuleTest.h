@@ -13,6 +13,7 @@
 #include "Tests/Exceptions/NotFoundExceptionTest.h"
 #include "Tests/Models/ListTest.h"
 #include "Tests/Models/ListRepositoryTest.h"
+#include "Tests/Models/InFileListRepositoryTest.h"
 
 /**
  * This class holds reference to all

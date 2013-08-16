@@ -14,6 +14,7 @@
 class ListRepositoryTest {
 
 private:
+
 	void testAdd();
 
 	void testFindById();

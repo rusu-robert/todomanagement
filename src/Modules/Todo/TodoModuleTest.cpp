@@ -31,6 +31,10 @@ void TodoModuleTest::runTests() {
 	ListRepositoryTest* listRepositoryTest = new ListRepositoryTest();
 	listRepositoryTest->runTests();
 	delete listRepositoryTest;
+
+	InFileListRepositoryTest* inFileListRepositoryTest = new InFileListRepositoryTest();
+	inFileListRepositoryTest->runTests();
+	delete inFileListRepositoryTest;
 }
 
 TodoModuleTest::~TodoModuleTest() {
