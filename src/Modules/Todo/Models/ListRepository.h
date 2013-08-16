@@ -29,7 +29,7 @@ public:
 
 	List* findById(int id)  throw (NotFoundException);
 
-	void edit(int id, string name);
+	void edit(int id, string name) throw (NotFoundException);
 
 	void deleteList(int id) throw (NotFoundException);
 

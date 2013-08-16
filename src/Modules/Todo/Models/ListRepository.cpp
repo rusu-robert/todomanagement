@@ -26,7 +26,7 @@ List* ListRepository::findById(int id) throw (NotFoundException) {
 	throw NotFoundException("List by given id doesn't exist!");
 }
 
-void ListRepository::edit(int id, string name) {
+void ListRepository::edit(int id, string name) throw (NotFoundException) {
 	findById(id)->setName(name);
 }
 

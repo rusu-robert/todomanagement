@@ -22,6 +22,8 @@ private:
 
 	void testEdit();
 
+	void testEditThrowsNotFoundException();
+
 	void testDeleteList();
 
 	void testGetNumberOfLists();
