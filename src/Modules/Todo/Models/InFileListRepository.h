@@ -26,11 +26,11 @@ public:
 
 	string getFileName();
 
-	void add(List* list) throw (NotFoundException);
+	void add(int id, string name) throw (NotFoundException);
 
-	void edit(List* list, string name) throw (NotFoundException);
+	void edit(int id, string name) throw (NotFoundException);
 
-	void deleteList(List* list) throw (NotFoundException);
+	void deleteList(int id) throw (NotFoundException);
 
 	virtual ~InFileListRepository();
 };

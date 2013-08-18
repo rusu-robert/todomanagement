@@ -36,7 +36,7 @@ void InFileListRepositoryTest::testConstructorWithParameters() {
 void InFileListRepositoryTest::testAdd() {
 	InFileListRepository* inFileListRepository = new InFileListRepository("fileName");
 	List* list = new List(1, "listName");
-	inFileListRepository->add(list);
+	inFileListRepository->add(1, "listName");
 	assert(inFileListRepository->getNumberOfLists() == 1 );
 	delete list;
 	delete inFileListRepository;
@@ -45,8 +45,8 @@ void InFileListRepositoryTest::testAdd() {
 void InFileListRepositoryTest::testEdit() {
 	InFileListRepository* inFileListRepository = new InFileListRepository("fileName");
 	List* list = new List(1, "listName");
-	inFileListRepository->add(list);
-	inFileListRepository->edit(list, "modifiedName");
+	inFileListRepository->add(1, "listName");
+	inFileListRepository->edit(1, "modifiedName");
 	assert(inFileListRepository->findById(1)->getName() == "modifiedName" );
 	delete list;
 	delete inFileListRepository;
@@ -56,9 +56,9 @@ void InFileListRepositoryTest::testDelete() {
 	InFileListRepository* inFileListRepository = new InFileListRepository("fileName");
 	List* firstList = new List(1, "firstListName");
 	List* secondList = new List(2, "secondListName");
-	inFileListRepository->add(firstList);
-	inFileListRepository->add(secondList);
-	inFileListRepository->deleteList(firstList);
+	inFileListRepository->add(1, "firstListName");
+	inFileListRepository->add(2, "secondListName");
+	inFileListRepository->deleteList(1);
 	assert(inFileListRepository->getNumberOfLists() == 1 );
 	delete secondList;
 	delete firstList;

@@ -16,16 +16,16 @@ string InFileListRepository::getFileName() {
 	return this->fileName;
 }
 
-void InFileListRepository::add(List* list) throw (NotFoundException) {
-	ListRepository::add(list->getId(), list->getName());
+void InFileListRepository::add(int id, string name) throw (NotFoundException) {
+	ListRepository::add(id, name);
 }
 
-void InFileListRepository::edit(List* list, string name) throw (NotFoundException) {
-	ListRepository::edit(list->getId(), name);
+void InFileListRepository::edit(int id, string name) throw (NotFoundException) {
+	ListRepository::edit(id, name);
 }
 
-void InFileListRepository::deleteList(List* list) throw (NotFoundException) {
-	ListRepository::deleteList(list->getId());
+void InFileListRepository::deleteList(int id) throw (NotFoundException) {
+	ListRepository::deleteList(id);
 }
 
 InFileListRepository::~InFileListRepository() {
