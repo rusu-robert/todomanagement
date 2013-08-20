@@ -27,13 +27,13 @@ void InFileListRepository::remove(int id) throw (NotFoundException) {
 	ListRepository::remove(id);
 }
 
-void InFileListRepository::writeInFile(ListRepository* listRepository) {
-	ofstream myfile;
-	myfile.open("this->fileName.txt");
-	for(int i=0; i< listRepository->getNumberOfLists(); i++) {
-		//to do
-	}
-	myfile.close();
+void InFileListRepository::writeInFile() {
+	//string fileName = "something";
+	 fstream fout(this->fileName.c_str(), ios::out);
+	 for(int i=0; i < this->lists->size(); i++) {
+		 fout<<(*lists)[i]->toString()<<"\n";
+	 }
+	  fout.close();
 }
 
 InFileListRepository::~InFileListRepository() {

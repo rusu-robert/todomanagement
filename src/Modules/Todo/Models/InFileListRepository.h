@@ -35,7 +35,7 @@ public:
 
 	virtual ~InFileListRepository();
 
-	void writeInFile(ListRepository* listRepository);
+	void writeInFile();
 
 };
 

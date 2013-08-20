@@ -10,6 +10,9 @@
 
 #include <assert.h>
 #include "../../Models/InFileListRepository.h"
+#include <string.h>
+
+using namespace std;
 
 class InFileListRepositoryTest {
 

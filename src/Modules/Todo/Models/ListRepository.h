@@ -19,7 +19,7 @@ using namespace std;
 
 class ListRepository : public AbstractListRepository{
 
-private:
+protected:
 	vector<List*>* lists;
 
 public:
