@@ -24,8 +24,8 @@ void InFileListRepository::edit(int id, string name) throw (NotFoundException) {
 	ListRepository::edit(id, name);
 }
 
-void InFileListRepository::deleteList(int id) throw (NotFoundException) {
-	ListRepository::deleteList(id);
+void InFileListRepository::remove(int id) throw (NotFoundException) {
+	ListRepository::remove(id);
 }
 
 InFileListRepository::~InFileListRepository() {

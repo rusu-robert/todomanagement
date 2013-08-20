@@ -30,7 +30,7 @@ public:
 
 	void edit(int id, string name) throw (NotFoundException);
 
-	void deleteList(int id) throw (NotFoundException);
+	void remove(int id) throw (NotFoundException);
 
 	virtual ~InFileListRepository();
 };
