@@ -65,6 +65,10 @@ void InFileListRepositoryTest::testDelete() {
 	delete inFileListRepository;
 }
 
+void InFileListRepositoryTest::testWriteInFile() {
+
+}
+
 InFileListRepositoryTest::~InFileListRepositoryTest() {
 	// TODO Auto-generated destructor stub
 }

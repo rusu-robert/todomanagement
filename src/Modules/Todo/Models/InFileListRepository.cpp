@@ -9,7 +9,6 @@
 
 InFileListRepository::InFileListRepository(string fileName) {
 	this->fileName = fileName;
-
 }
 
 string InFileListRepository::getFileName() {
@@ -26,6 +25,15 @@ void InFileListRepository::edit(int id, string name) throw (NotFoundException) {
 
 void InFileListRepository::deleteList(int id) throw (NotFoundException) {
 	ListRepository::deleteList(id);
+}
+
+void InFileListRepository::writeInFile(ListRepository* listRepository) {
+	ofstream myfile;
+	myfile.open("this->fileName.txt");
+	for(int i=0; i< listRepository->getNumberOfLists(); i++) {
+		//to do
+	}
+	myfile.close();
 }
 
 InFileListRepository::~InFileListRepository() {

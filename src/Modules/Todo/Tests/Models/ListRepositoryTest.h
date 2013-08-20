@@ -29,6 +29,8 @@ private:
 
 	void testGetNumberOfLists();
 
+	void testGetLists();
+
 public:
 
 	ListRepositoryTest();

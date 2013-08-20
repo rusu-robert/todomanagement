@@ -27,6 +27,8 @@ public:
 
 	void testDelete();
 
+	void testWriteInFile();
+
 	virtual ~InFileListRepositoryTest();
 };
 

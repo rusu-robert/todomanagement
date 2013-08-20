@@ -23,6 +23,7 @@ private:
 	vector<List*>* lists;
 
 public:
+
 	ListRepository();
 
 	void add(int id, string name);
@@ -34,6 +35,8 @@ public:
 	void deleteList(int id) throw (NotFoundException);
 
 	int getNumberOfLists();
+
+	vector<List*>* getLists();
 
 	virtual ~ListRepository();
 };

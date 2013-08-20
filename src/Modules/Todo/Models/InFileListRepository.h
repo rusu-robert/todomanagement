@@ -10,6 +10,7 @@
 
 #include <string>
 #include <iostream>
+#include <fstream>
 #include "ListRepository.h"
 
 using namespace std;
@@ -33,6 +34,9 @@ public:
 	void deleteList(int id) throw (NotFoundException);
 
 	virtual ~InFileListRepository();
+
+	void writeInFile(ListRepository* listRepository);
+
 };
 
 #endif /* INFILELISTREPOSITORY_H_ */
