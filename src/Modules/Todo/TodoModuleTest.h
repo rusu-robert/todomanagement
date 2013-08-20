@@ -12,6 +12,7 @@
 #include "Tests/Exceptions/ExceptionTest.h"
 #include "Tests/Exceptions/NotFoundExceptionTest.h"
 #include "Tests/Exceptions/CorruptDataExceptionTest.h"
+#include "Tests/Exceptions/ValidationExceptionTest.h"
 #include "Tests/Models/ListTest.h"
 #include "Tests/Models/ListRepositoryTest.h"
 #include "Tests/Models/InFileListRepositoryTest.h"

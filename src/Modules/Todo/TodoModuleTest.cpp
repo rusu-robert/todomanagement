@@ -39,6 +39,10 @@ void TodoModuleTest::runTests() {
 	CorruptDataExceptionTest* corruptDataExceptionTest = new CorruptDataExceptionTest();
 	corruptDataExceptionTest->runTests();
 	delete corruptDataExceptionTest;
+
+	ValidationExceptionTest* validationExceptionTest = new ValidationExceptionTest();
+	validationExceptionTest->runTests();
+	delete validationExceptionTest;
 }
 
 TodoModuleTest::~TodoModuleTest() {
