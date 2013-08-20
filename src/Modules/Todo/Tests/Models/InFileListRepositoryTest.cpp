@@ -58,7 +58,7 @@ void InFileListRepositoryTest::testDelete() {
 	List* secondList = new List(2, "secondListName");
 	inFileListRepository->add(1, "firstListName");
 	inFileListRepository->add(2, "secondListName");
-	inFileListRepository->deleteList(1);
+	inFileListRepository->remove(1);
 	assert(inFileListRepository->getNumberOfLists() == 1 );
 	delete secondList;
 	delete firstList;

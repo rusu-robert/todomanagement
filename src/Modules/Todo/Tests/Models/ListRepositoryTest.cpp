@@ -62,12 +62,12 @@ void ListRepositoryTest::testEditThrowsNotFoundException() {
 	delete repository;
 }
 
-void ListRepositoryTest::testDeleteList() {
+void ListRepositoryTest::testRemove() {
 	ListRepository* repository = new ListRepository();
 	repository->add(1, "firstList");
 	repository->add(2, "secondList");
 	repository->add(3, "thirdList");
-	repository->deleteList(2);
+	repository->remove(2);
 	assert(repository->getNumberOfLists() == 2);
 	delete repository;
 }
@@ -109,7 +109,7 @@ void ListRepositoryTest::runTests() {
 	this->testGetNumberOfLists();
 	cout<<"ListRepositoryTest::testGetNumberOfLists OK"<<endl;
 
-	this->testDeleteList();
+	this->testRemove();
 	cout<<"ListRepositoryTest::testDeleteList OK"<<endl;
 
 	this->testGetLists();

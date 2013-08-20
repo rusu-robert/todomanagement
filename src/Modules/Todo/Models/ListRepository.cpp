@@ -30,7 +30,7 @@ void ListRepository::edit(int id, string name) throw (NotFoundException) {
 	findById(id)->setName(name);
 }
 
-void ListRepository::deleteList(int id) throw (NotFoundException) {
+void ListRepository::remove(int id) throw (NotFoundException) {
 	int i = 0;
 	while((*this->lists)[i]->getId() != id) {
 		i++;
