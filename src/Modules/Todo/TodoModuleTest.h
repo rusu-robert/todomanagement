@@ -15,6 +15,7 @@
 #include "Tests/Exceptions/ValidationExceptionTest.h"
 #include "Tests/Models/ListTest.h"
 #include "Tests/Models/ListRepositoryTest.h"
+#include "Tests/Models/ListValidatorTest.h"
 #include "Tests/Models/InFileListRepositoryTest.h"
 
 /**

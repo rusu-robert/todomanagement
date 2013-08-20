@@ -43,6 +43,10 @@ void TodoModuleTest::runTests() {
 	ValidationExceptionTest* validationExceptionTest = new ValidationExceptionTest();
 	validationExceptionTest->runTests();
 	delete validationExceptionTest;
+
+	ListValidatorTest* listValidatorTest = new ListValidatorTest();
+	listValidatorTest->runTests();
+	delete listValidatorTest;
 }
 
 TodoModuleTest::~TodoModuleTest() {
