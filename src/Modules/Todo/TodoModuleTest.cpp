@@ -35,6 +35,10 @@ void TodoModuleTest::runTests() {
 	InFileListRepositoryTest* inFileListRepositoryTest = new InFileListRepositoryTest();
 	inFileListRepositoryTest->runTests();
 	delete inFileListRepositoryTest;
+
+	CorruptDataExceptionTest* corruptDataExceptionTest = new CorruptDataExceptionTest();
+	corruptDataExceptionTest->runTests();
+	delete corruptDataExceptionTest;
 }
 
 TodoModuleTest::~TodoModuleTest() {
