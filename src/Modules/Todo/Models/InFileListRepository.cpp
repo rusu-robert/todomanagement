@@ -17,14 +17,17 @@ string InFileListRepository::getFileName() {
 
 void InFileListRepository::add(int id, string name) throw (NotFoundException) {
 	ListRepository::add(id, name);
+	writeInFile();
 }
 
 void InFileListRepository::edit(int id, string name) throw (NotFoundException) {
 	ListRepository::edit(id, name);
+	writeInFile();
 }
 
 void InFileListRepository::remove(int id) throw (NotFoundException) {
 	ListRepository::remove(id);
+	writeInFile();
 }
 
 void InFileListRepository::writeInFile() {
