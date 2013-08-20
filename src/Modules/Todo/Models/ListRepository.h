@@ -35,6 +35,8 @@ public:
 
 	int getNumberOfLists();
 
+	vector<List*>* getLists();
+
 	virtual ~ListRepository();
 };
 

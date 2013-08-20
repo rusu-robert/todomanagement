@@ -47,6 +47,10 @@ int ListRepository::getNumberOfLists(){
 	return (this->lists)->size();
 }
 
+vector<List*>* ListRepository::getLists() {
+	return this->lists;
+}
+
 ListRepository::~ListRepository() {
 	for(int i=0; i<this->lists->size(); i++) {
 		delete (*this->lists)[i];
