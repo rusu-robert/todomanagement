@@ -22,8 +22,8 @@ void InFileListRepositoryTest::runTests() {
 	this->testEdit();
 	cout<<"InFileListRepositoryTest::testEdit OK"<<endl;
 
-	this->testDelete();
-	cout<<"InFileListRepositoryTest::testDelete OK"<<endl;
+	this->testRemove();
+	cout<<"InFileListRepositoryTest::testRemove OK"<<endl;
 
 	this->testWriteInFile();
 	cout<<"InFileListRepositoryTest::testWriteInFile OK"<<endl;
@@ -43,6 +43,7 @@ void InFileListRepositoryTest::testAdd() {
 	assert(inFileListRepository->getNumberOfLists() == 1 );
 	delete list;
 	delete inFileListRepository;
+	unlink(inFileListRepository->getFileName().c_str());
 }
 
 void InFileListRepositoryTest::testEdit() {
@@ -53,9 +54,10 @@ void InFileListRepositoryTest::testEdit() {
 	assert(inFileListRepository->findById(1)->getName() == "modifiedName" );
 	delete list;
 	delete inFileListRepository;
+	unlink(inFileListRepository->getFileName().c_str());
 }
 
-void InFileListRepositoryTest::testDelete() {
+void InFileListRepositoryTest::testRemove() {
 	InFileListRepository* inFileListRepository = new InFileListRepository("fileName");
 	List* firstList = new List(1, "firstListName");
 	List* secondList = new List(2, "secondListName");
@@ -66,6 +68,7 @@ void InFileListRepositoryTest::testDelete() {
 	delete secondList;
 	delete firstList;
 	delete inFileListRepository;
+	unlink(inFileListRepository->getFileName().c_str());
 }
 
 void InFileListRepositoryTest::testWriteInFile() {

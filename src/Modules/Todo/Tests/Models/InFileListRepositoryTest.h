@@ -28,7 +28,7 @@ public:
 
 	void testEdit();
 
-	void testDelete();
+	void testRemove();
 
 	void testWriteInFile();
 
