@@ -38,7 +38,7 @@ ListController::ListController(AbstractListRepository* listRepository) {
 	this->listRepository = listRepository;
 }
 
-void ListController::remove(int id) {
+void ListController::remove(int id) throw (NotFoundException) {
 	this->listRepository->remove(id);
 }
 

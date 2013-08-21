@@ -17,6 +17,7 @@
 #include "Tests/Models/ListRepositoryTest.h"
 #include "Tests/Models/ListValidatorTest.h"
 #include "Tests/Models/InFileListRepositoryTest.h"
+#include "Tests/Controllers/ListControllerTest.h"
 
 /**
  * This class holds reference to all

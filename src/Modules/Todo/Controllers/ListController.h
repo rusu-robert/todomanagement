@@ -20,11 +20,11 @@ private:
 
 	int generateIdForItem();
 
-	void remove(int id);
-
 public:
 
 	ListController(AbstractListRepository* listRepository);
+
+	void remove(int id) throw (NotFoundException);
 
 	virtual ~ListController();
 };

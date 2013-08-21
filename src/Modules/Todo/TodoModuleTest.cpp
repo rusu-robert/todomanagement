@@ -47,7 +47,12 @@ void TodoModuleTest::runTests() {
 	ListValidatorTest* listValidatorTest = new ListValidatorTest();
 	listValidatorTest->runTests();
 	delete listValidatorTest;
-}
+
+	ListControllerTest* listControllerTest = new ListControllerTest();
+	listControllerTest->runTests();
+	delete listControllerTest;
+};
+
 
 TodoModuleTest::~TodoModuleTest() {
 
