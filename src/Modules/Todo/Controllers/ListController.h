@@ -11,6 +11,7 @@
 #include "../Models/AbstractListRepository.h"
 
 class ListController {
+
 private:
 
 	AbstractListRepository* listRepository;
@@ -18,7 +19,11 @@ private:
 	int generateId();
 
 	int generateIdForItem();
+
+	void remove(int id);
+
 public:
+
 	ListController(AbstractListRepository* listRepository);
 
 	virtual ~ListController();

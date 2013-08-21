@@ -38,6 +38,10 @@ ListController::ListController(AbstractListRepository* listRepository) {
 	this->listRepository = listRepository;
 }
 
+void ListController::remove(int id) {
+	this->listRepository->remove(id);
+}
+
 ListController::~ListController() {
 	// TODO Auto-generated destructor stub
 }
