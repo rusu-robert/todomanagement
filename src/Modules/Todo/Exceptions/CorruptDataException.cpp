@@ -7,12 +7,7 @@
 
 #include "CorruptDataException.h"
 
-CorruptDataException::CorruptDataException(string message) {
-	this->message = message;
-}
-
-string CorruptDataException::getMessage() {
-	return message;
+CorruptDataException::CorruptDataException(string message):Exception(message) {
 }
 
 CorruptDataException::~CorruptDataException() {

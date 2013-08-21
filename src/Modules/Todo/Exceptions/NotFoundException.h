@@ -16,15 +16,9 @@ using namespace std;
 
 class NotFoundException : public Exception {
 
-private:
-
-	string message;
-
 public:
 
 	NotFoundException(string message);
-
-	string getMessage();
 
 	~NotFoundException();
 };

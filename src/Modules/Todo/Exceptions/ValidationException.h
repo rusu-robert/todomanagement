@@ -16,13 +16,9 @@ using namespace std;
 
 class ValidationException : public Exception {
 
-private:
-	string message;
 public:
 
 	ValidationException(string message);
-
-	string getMessage();
 
 	virtual ~ValidationException();
 };

@@ -7,12 +7,7 @@
 
 #include "NotFoundException.h"
 
-NotFoundException::NotFoundException(string message) {
-	this->message = message;
-}
-
-string NotFoundException::getMessage() {
-	return this->message;
+NotFoundException::NotFoundException(string message):Exception(message) {
 }
 
 NotFoundException::~NotFoundException() {

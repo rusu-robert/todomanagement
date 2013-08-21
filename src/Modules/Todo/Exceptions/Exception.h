@@ -15,7 +15,8 @@ using namespace std;
 
 class Exception {
 
-private:
+protected:
+
 	string message;
 
 

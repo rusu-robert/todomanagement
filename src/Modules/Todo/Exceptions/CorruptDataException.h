@@ -16,15 +16,9 @@ using namespace std;
 
 class CorruptDataException : public Exception {
 
-	private:
-
-		string message;
-
 	public:
 
 		CorruptDataException(string message);
-
-		string getMessage();
 
 		virtual ~CorruptDataException();
 };

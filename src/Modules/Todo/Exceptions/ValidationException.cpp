@@ -7,12 +7,7 @@
 
 #include "ValidationException.h"
 
-ValidationException::ValidationException(string message) {
-	this->message = message;
-}
-
-string ValidationException::getMessage() {
-	return message;
+ValidationException::ValidationException(string message):Exception(message) {
 }
 
 ValidationException::~ValidationException() {

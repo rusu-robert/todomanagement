@@ -1,7 +1,7 @@
 /*
  * NotFoundExceptionTest.cpp
  *
- *  Created on: 14.08.2013
+ *  Created on: 21.08.2013
  *      Author: Patri
  */
 
@@ -9,6 +9,7 @@
 
 NotFoundExceptionTest::NotFoundExceptionTest() {
 	// TODO Auto-generated constructor stub
+
 }
 
 void NotFoundExceptionTest::runTests() {
@@ -17,8 +18,8 @@ void NotFoundExceptionTest::runTests() {
 }
 
 void NotFoundExceptionTest::testConstructor() {
-	NotFoundException* notFoundException = new NotFoundException("Not found!");
-	assert(notFoundException->getMessage() == "Not found!");
+	NotFoundException* notFoundException = new NotFoundException("Item not found!");
+	assert(notFoundException->getMessage() == "Item not found!");
 	delete notFoundException;
 }
 
