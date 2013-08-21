@@ -24,6 +24,8 @@ public:
 
 	void testValidate();
 
+	void testWithValidData();
+
 	virtual ~ListValidatorTest();
 };
 

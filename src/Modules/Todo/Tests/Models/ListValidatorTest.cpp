@@ -13,21 +13,32 @@ ListValidatorTest::ListValidatorTest() {
 }
 
 void ListValidatorTest::testValidate() {
-	List* list = new List(1, "");
 	ListValidator* listValidator = new ListValidator();
 	try{
-	listValidator->validate(list->getName());
+	listValidator->validate("");
+	assert(false);
 	} catch(ValidationException &exception) {
 		assert(true);
 	}
 	delete listValidator;
-	delete list;
+}
+
+void ListValidatorTest::testWithValidData() {
+	ListValidator* listValidator = new ListValidator();
+	try{
+		listValidator->validate("validData");
+	} catch(ValidationException &exception) {
+		assert(false);
+	}
+	delete listValidator;
 }
 
 void ListValidatorTest::runTests() {
 	this->testValidate();
 	cout<<"ListValidatorTest::testValidate OK"<<endl;
 
+	this->testWithValidData();
+	cout<<"ListValidatorTest::testWithValidData OK"<<endl;
 }
 
 ListValidatorTest::~ListValidatorTest() {
