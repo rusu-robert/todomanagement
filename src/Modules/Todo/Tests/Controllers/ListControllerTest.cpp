@@ -101,6 +101,7 @@ void ListControllerTest::runTests() {
 
 	this->testEditItem();
 	cout<<"ListControllerTest::testEditItem OK"<<endl;
+
 }
 
 ListControllerTest::~ListControllerTest() {

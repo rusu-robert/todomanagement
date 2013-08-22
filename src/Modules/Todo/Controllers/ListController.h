@@ -32,9 +32,9 @@ public:
 
 	void edit(int id, string name) throw (NotFoundException, ValidationException);
 
-	void addItem(int idList, string name, string description, bool isCompleted) throw (NotFoundException);
+	void addItem(int idList, string name, string description, bool isCompleted) throw (NotFoundException, ValidationException);
 
-	void editItem(int idList, int idItem, string name, string description, bool isCompleted) throw (NotFoundException);
+	void editItem(int idList, int idItem, string name, string description, bool isCompleted) throw (NotFoundException, ValidationException);
 
 	virtual ~ListController();
 };
