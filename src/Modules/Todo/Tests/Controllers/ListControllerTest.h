@@ -29,6 +29,8 @@ public:
 
 	void testAddWithInvalidData();
 
+	void testEdit();
+
 	virtual ~ListControllerTest();
 };
 

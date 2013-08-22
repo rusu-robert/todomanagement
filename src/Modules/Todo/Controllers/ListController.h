@@ -29,6 +29,8 @@ public:
 
 	void add(string name) throw (ValidationException);
 
+	void edit(int id, string name) throw (NotFoundException, ValidationException);
+
 	virtual ~ListController();
 };
 

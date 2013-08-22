@@ -46,7 +46,18 @@ void ListControllerTest::testAddWithInvalidData() {
 		}
 	delete listController;
 	delete listRepository;
-	}
+}
+
+void ListControllerTest::testEdit() {
+	ListRepository* listRepository = new ListRepository();
+	listRepository->add(1, "first name");
+	listRepository->add(2, "second name");
+	ListController* listController = new ListController(listRepository);
+	listController->edit(1, "modified name");
+	assert(listRepository->findById(1)->getName() == "modified name");
+	delete listController;
+	delete listRepository;
+}
 
 void ListControllerTest::runTests() {
 	this->testRemove();
@@ -56,7 +67,10 @@ void ListControllerTest::runTests() {
 	cout<<"ListControllerTest::testAddWithValidData OK"<<endl;
 
 	this->testAddWithInvalidData();
-	cout<<"ListControlleTest::testAddWithInvalidData OK"<<endl;
+	cout<<"ListControllerTest::testAddWithInvalidData OK"<<endl;
+
+	this->testEdit();
+	cout<<"ListControllerTest::testEdit OK"<<endl;
 }
 
 ListControllerTest::~ListControllerTest() {
