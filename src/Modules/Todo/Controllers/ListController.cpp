@@ -54,7 +54,22 @@ void ListController::edit(int id, string name) throw (NotFoundException,Validati
 	listValidator->validate(name);
 	this->listRepository->edit(id, name);
 	delete listValidator;
+}
 
+void ListController::addItem(int idList, string name, string description, bool isCompleted) throw (NotFoundException) {
+	ItemValidator* itemValidator = new ItemValidator();
+	itemValidator->validate(name);
+	this->listRepository->findById(idList)->addItem(generateIdForItem(), name, description, isCompleted);
+	delete itemValidator;
+}
+
+void ListController::editItem(int idList, int idItem, string name, string description, bool isCompleted) throw (NotFoundException) {
+	ItemValidator* itemValidator = new ItemValidator();
+	itemValidator->validate(name);
+	this->listRepository->findById(idList)->findItemById(idItem)->setName(name);
+	this->listRepository->findById(idList)->findItemById(idItem)->setDescription(description);
+	this->listRepository->findById(idList)->findItemById(idItem)->setIsCompleted(isCompleted);
+	delete itemValidator;
 }
 
 ListController::~ListController() {

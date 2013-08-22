@@ -10,6 +10,7 @@
 
 #include "../Models/AbstractListRepository.h"
 #include "../Models/ListValidator.h"
+#include "../Models/ItemValidator.h"
 
 class ListController {
 
@@ -30,6 +31,10 @@ public:
 	void add(string name) throw (ValidationException);
 
 	void edit(int id, string name) throw (NotFoundException, ValidationException);
+
+	void addItem(int idList, string name, string description, bool isCompleted) throw (NotFoundException);
+
+	void editItem(int idList, int idItem, string name, string description, bool isCompleted) throw (NotFoundException);
 
 	virtual ~ListController();
 };
