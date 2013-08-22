@@ -25,6 +25,10 @@ public:
 
 	void testRemove();
 
+	void testAddWithValidData();
+
+	void testAddWithInvalidData();
+
 	virtual ~ListControllerTest();
 };
 

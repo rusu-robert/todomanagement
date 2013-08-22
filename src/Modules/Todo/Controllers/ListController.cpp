@@ -42,6 +42,13 @@ void ListController::remove(int id) throw (NotFoundException) {
 	this->listRepository->remove(id);
 }
 
+void ListController::add(string name) throw (ValidationException) {
+	ListValidator* listValidator = new ListValidator();
+	listValidator->validate(name);
+	this->listRepository->add(generateId(), name);
+	delete listValidator;
+}
+
 ListController::~ListController() {
 	// TODO Auto-generated destructor stub
 }

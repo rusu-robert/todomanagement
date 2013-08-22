@@ -9,6 +9,7 @@
 #define LISTCONTROLLER_H_
 
 #include "../Models/AbstractListRepository.h"
+#include "../Models/ListValidator.h"
 
 class ListController {
 
@@ -25,6 +26,8 @@ public:
 	ListController(AbstractListRepository* listRepository);
 
 	void remove(int id) throw (NotFoundException);
+
+	void add(string name) throw (ValidationException);
 
 	virtual ~ListController();
 };
