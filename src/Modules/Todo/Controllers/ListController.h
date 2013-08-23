@@ -36,6 +36,8 @@ public:
 
 	void editItem(int idList, int idItem, string name, string description, bool isCompleted) throw (NotFoundException, ValidationException);
 
+	void removeItem(int idList, int idItem) throw (NotFoundException);
+
 	virtual ~ListController();
 };
 

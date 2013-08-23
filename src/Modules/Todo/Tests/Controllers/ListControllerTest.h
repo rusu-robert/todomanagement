@@ -35,6 +35,8 @@ public:
 
 	void testEditItem();
 
+	void testRemoveItem();
+
 	virtual ~ListControllerTest();
 };
 

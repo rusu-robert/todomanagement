@@ -83,6 +83,20 @@ void ListControllerTest::testEditItem() {
 	delete listRepository;
 }
 
+void ListControllerTest::testRemoveItem() {
+	ListRepository* listRepository = new ListRepository();
+	listRepository->add(1, "first name");
+	ListController* listController = new ListController(listRepository);
+	listController->addItem(1, "first name", "first description", true);
+	listController->addItem(1, "second name", "second description", false);
+	listController->removeItem(1,1);
+	assert(listRepository->findById(1)->getNumberOfItems() == 1);
+	delete listController;
+	delete listRepository;
+
+
+}
+
 void ListControllerTest::runTests() {
 	this->testRemove();
 	cout<<"ListControllerTest::testRemove OK"<<endl;
@@ -101,6 +115,9 @@ void ListControllerTest::runTests() {
 
 	this->testEditItem();
 	cout<<"ListControllerTest::testEditItem OK"<<endl;
+
+	this->testRemoveItem();
+	cout<<"ListControllerTest::testRemoveItem OK"<<endl;
 
 }
 
