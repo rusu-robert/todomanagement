@@ -66,9 +66,10 @@ void ListController::addItem(int idList, string name, string description, bool i
 void ListController::editItem(int idList, int idItem, string name, string description, bool isCompleted) throw (NotFoundException, ValidationException) {
 	ItemValidator* itemValidator = new ItemValidator();
 	itemValidator->validate(name);
-	this->listRepository->findById(idList)->findItemById(idItem)->setName(name);
-	this->listRepository->findById(idList)->findItemById(idItem)->setDescription(description);
-	this->listRepository->findById(idList)->findItemById(idItem)->setIsCompleted(isCompleted);
+	Item* item = this->listRepository->findById(idList)->findItemById(idItem);
+	item->setName(name);
+	item->setDescription(description);
+	item->setIsCompleted(isCompleted);
 	delete itemValidator;
 }
 
