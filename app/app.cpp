@@ -6,10 +6,13 @@
  */
 
 #include <iostream>
-using namespace std;
-
 #include "../src/Modules/ApplicationTest.h"
 #include <fstream>
+#include <QtGui>
+#include <QApplication>
+#include "../src/Modules/Todo/Views/MainWindow.h"
+
+using namespace std;
 
 void runTests() {
 	ApplicationTest* applicationTest = new ApplicationTest();
@@ -17,9 +20,12 @@ void runTests() {
 	delete applicationTest;
 }
 
-int main() {
+int main(int argc, char *argv[]) {
 	runTests();
-	return 0;
+	QApplication a(argc, argv);
+	MainWindow window;
+	window.show();
+	return a.exec();
 }
 
 
