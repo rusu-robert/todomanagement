@@ -8,7 +8,7 @@
 #ifndef ITEMVALIDATOR_H_
 #define ITEMVALIDATOR_H_
 
-#include "../Exceptions/ValidationException.h"
+#include "../../Exceptions/ValidationException.h"
 #include <iostream>
 
 using namespace std;

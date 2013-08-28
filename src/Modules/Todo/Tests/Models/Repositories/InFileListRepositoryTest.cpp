@@ -28,6 +28,8 @@ void InFileListRepositoryTest::runTests() {
 	this->testWriteInFile();
 	cout<<"InFileListRepositoryTest::testWriteInFile OK"<<endl;
 
+	this->testReadFromFile();
+	cout<<"InFileListRepositoryTest::testReadFromFile OK"<<endl;
 }
 
 void InFileListRepositoryTest::testConstructorWithParameters() {
@@ -100,6 +102,30 @@ void InFileListRepositoryTest::testWriteInFile() {
 	unlink(inFileListRepository->getFileName().c_str());
 	delete inFileListRepository;
 
+}
+
+void InFileListRepositoryTest::testReadFromFile() {
+	InFileListRepository* repository = new InFileListRepository("testReadFromFile.txt");
+	fstream fout(repository->getFileName().c_str(), ios::out);
+	List* firstList = new List(1, "name");
+	firstList->addItem(1, "someName", "description", true);
+	firstList->addItem(2, "randomname", "description", false);
+	firstList->addItem(3, "aaan", "des", true);
+	List* secondList = new List(2, "anotherName");
+	fout<<firstList->toString()<<endl;
+	fout<<secondList->toString()<<endl;
+	fout.close();
+	delete firstList;
+	delete secondList;
+
+
+	repository->readFromFile();
+	List* firstListFound = repository->findById(1);
+	assert(firstListFound->getName() == "name");
+	assert(firstListFound->getNumberOfItems() == 3);
+
+	unlink(repository->getFileName().c_str());
+	delete repository;
 }
 
 InFileListRepositoryTest::~InFileListRepositoryTest() {

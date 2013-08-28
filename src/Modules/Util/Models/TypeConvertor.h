@@ -9,8 +9,9 @@
 #define TYPECONVERTOR_H_
 
 #include <string>
- #include <sstream>
- #include <string>
+#include <sstream>
+#include <string>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -22,6 +23,8 @@ public:
 	 * http://stackoverflow.com/questions/5290089/how-to-convert-a-number-to-string-and-vice-versa-in-c
 	 */
 	static string convertIntToString(int number);
+
+	static int convertStringToInt(string str);
 
 	virtual ~TypeConvertor();
 };

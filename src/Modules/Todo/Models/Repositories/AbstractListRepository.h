@@ -8,9 +8,9 @@
 #ifndef ABSTRACTLISTREPOSITORY_H_
 #define ABSTRACTLISTREPOSITORY_H_
 
-#include "../Exceptions/NotFoundException.h"
+#include "../../Exceptions/NotFoundException.h"
 #include <string>
-#include "../Models/List.h"
+#include "../../Models/Entities/List.h"
 
 using namespace std;
 

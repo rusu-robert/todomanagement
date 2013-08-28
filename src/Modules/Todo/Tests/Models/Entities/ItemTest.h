@@ -8,7 +8,7 @@
 #ifndef ITEMTEST_H_
 #define ITEMTEST_H_
 
-#include "../../Models/Item.h"
+#include "../../../Models/Entities/Item.h"
 #include <assert.h>
 
 using namespace std;

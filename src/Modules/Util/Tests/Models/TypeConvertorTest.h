@@ -11,6 +11,7 @@
 #include <iostream>
 #include "../../Models/TypeConvertor.h"
 #include <assert.h>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -23,6 +24,8 @@ public:
 	void runTests();
 
 	void testConvertIntToString();
+
+	void testConvertStringToInt();
 
 	virtual ~TypeConvertorTest();
 };

@@ -9,7 +9,7 @@
 #define LISTCONTROLLERTEST_H_
 
 #include "../../Controllers/ListController.h"
-#include "../../Models/ListRepository.h"
+#include "../../Models/Repositories/ListRepository.h"
 #include <assert.h>
 
 using namespace std;

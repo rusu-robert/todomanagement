@@ -8,9 +8,9 @@
 #ifndef LISTCONTROLLER_H_
 #define LISTCONTROLLER_H_
 
-#include "../Models/AbstractListRepository.h"
-#include "../Models/ListValidator.h"
-#include "../Models/ItemValidator.h"
+#include "../Models/Repositories/AbstractListRepository.h"
+#include "../Models/Validators/ListValidator.h"
+#include "../Models/Validators/ItemValidator.h"
 
 class ListController {
 

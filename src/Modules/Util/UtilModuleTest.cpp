@@ -15,6 +15,10 @@ void UtilModuleTest::runTests() {
 	TypeConvertorTest* typeConvertorTest = new TypeConvertorTest();
 	typeConvertorTest->runTests();
 	delete typeConvertorTest;
+
+	StringHelperTest* stringHelperTest = new StringHelperTest();
+	stringHelperTest->runTests();
+	delete stringHelperTest;
 }
 
 UtilModuleTest::~UtilModuleTest() {

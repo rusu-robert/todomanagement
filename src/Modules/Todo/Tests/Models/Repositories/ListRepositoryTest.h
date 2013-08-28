@@ -9,7 +9,7 @@
 #define LISTREPOSITORYTEST_H_
 
 #include <assert.h>
-#include "../../Models/ListRepository.h"
+#include "../../../Models/Repositories/ListRepository.h"
 
 class ListRepositoryTest {
 

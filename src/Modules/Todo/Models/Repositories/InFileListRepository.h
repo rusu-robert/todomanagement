@@ -12,6 +12,10 @@
 #include <iostream>
 #include <fstream>
 #include "ListRepository.h"
+#include <string.h>
+#include <stdlib.h>
+#include "../../../Util/Models/StringHelper.h"
+#include "../../../Util/Models/TypeConvertor.h"
 
 using namespace std;
 
@@ -36,6 +40,8 @@ public:
 	virtual ~InFileListRepository();
 
 	void writeInFile();
+
+	void readFromFile();
 
 };
 

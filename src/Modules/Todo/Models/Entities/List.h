@@ -11,7 +11,7 @@
 #include <vector>
 #include <iostream>
 #include "Item.h"
-#include "../Exceptions/NotFoundException.h"
+#include "../../Exceptions/NotFoundException.h"
 
 using namespace std;
 

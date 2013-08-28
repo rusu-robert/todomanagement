@@ -10,9 +10,9 @@
 
 #include <iostream>
 #include <vector>
-#include "Item.h"
-#include "../Exceptions/NotFoundException.h"
-#include "List.h"
+#include "../Entities/Item.h"
+#include "../../Exceptions/NotFoundException.h"
+#include "../Entities/List.h"
 #include "AbstractListRepository.h"
 
 using namespace std;

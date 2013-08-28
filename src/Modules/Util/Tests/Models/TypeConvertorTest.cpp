@@ -15,10 +15,17 @@ TypeConvertorTest::TypeConvertorTest() {
 void TypeConvertorTest::runTests() {
 	this->testConvertIntToString();
 	cout<<"TypeConvertorTest::testConvertIntToString OK"<<endl;
+
+	this->testConvertStringToInt();
+	cout<<"TypeConvertorTest::testConvertStringToInt OK"<<endl;
 }
 
 void TypeConvertorTest::testConvertIntToString() {
 	assert(TypeConvertor::convertIntToString(1234) == "1234");
+}
+
+void TypeConvertorTest::testConvertStringToInt() {
+	assert(TypeConvertor::convertStringToInt("1234") == 1234);
 }
 
 TypeConvertorTest::~TypeConvertorTest() {

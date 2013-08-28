@@ -8,16 +8,16 @@
 #ifndef TODOMODULETEST_H_
 #define TODOMODULETEST_H_
 
-#include "Tests/Models/ItemTest.h"
+#include "Tests/Models//Entities/ItemTest.h"
 #include "Tests/Exceptions/ExceptionTest.h"
 #include "Tests/Exceptions/NotFoundExceptionTest.h"
 #include "Tests/Exceptions/CorruptDataExceptionTest.h"
 #include "Tests/Exceptions/ValidationExceptionTest.h"
-#include "Tests/Models/ListTest.h"
-#include "Tests/Models/ListRepositoryTest.h"
-#include "Tests/Models/ListValidatorTest.h"
-#include "Tests/Models/ItemValidatorTest.h"
-#include "Tests/Models/InFileListRepositoryTest.h"
+#include "Tests/Models/Entities/ListTest.h"
+#include "Tests/Models/Repositories/ListRepositoryTest.h"
+#include "Tests/Models/Validators/ListValidatorTest.h"
+#include "Tests/Models/Validators/ItemValidatorTest.h"
+#include "Tests/Models/Repositories/InFileListRepositoryTest.h"
 #include "Tests/Controllers/ListControllerTest.h"
 
 /**

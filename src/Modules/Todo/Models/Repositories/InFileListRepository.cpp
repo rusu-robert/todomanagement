@@ -39,6 +39,37 @@ void InFileListRepository::writeInFile() {
 	  fout.close();
 }
 
+void InFileListRepository::readFromFile() {
+	fstream fin(&this->fileName[0], ios::in);
+		int id, itemId, completedFlag;
+		bool isCompleted;
+		string name, itemName, itemDescription;
+		char line[8192];
+		while(!fin.eof()) {
+			fin.getline(line, 8192);
+			if (strlen(line) > 0) {
+				vector<string> pieces = StringHelper::explode(line, ';');
+				List* list = new List(TypeConvertor::convertStringToInt(pieces[0]), pieces[1]);
+				int position = 2;
+				while (position < pieces.size()) {
+					itemId = TypeConvertor::convertStringToInt(pieces[position]);
+					itemName = pieces[position + 1];
+					itemDescription = pieces[position + 2];
+					completedFlag = TypeConvertor::convertStringToInt(pieces[position + 3]);
+					if (completedFlag == 0) {
+						isCompleted = false;
+					} else {
+						isCompleted= true;
+					}
+					position += 4;
+					list->addItem(itemId, itemName, itemDescription, isCompleted);
+				}
+				this->lists->push_back(list);
+			}
+		}
+		fin.close();
+}
+
 InFileListRepository::~InFileListRepository() {
 	// TODO Auto-generated destructor stub
 }

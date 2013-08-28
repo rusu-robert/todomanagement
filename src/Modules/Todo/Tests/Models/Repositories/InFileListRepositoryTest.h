@@ -9,7 +9,7 @@
 #define INFILELISTREPOSITORYTEST_H_
 
 #include <assert.h>
-#include "../../Models/InFileListRepository.h"
+#include "../../../Models/Repositories/InFileListRepository.h"
 #include <string.h>
 
 using namespace std;
@@ -31,6 +31,8 @@ public:
 	void testRemove();
 
 	void testWriteInFile();
+
+	void testReadFromFile();
 
 	virtual ~InFileListRepositoryTest();
 };

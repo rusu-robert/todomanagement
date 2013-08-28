@@ -6,7 +6,7 @@
  */
 
 #include "ListTest.h"
-#include "../../Models/Item.h"
+#include "../../../Models/Entities/Item.h"
 
 ListTest::ListTest() {
 	// TODO Auto-generated constructor stub

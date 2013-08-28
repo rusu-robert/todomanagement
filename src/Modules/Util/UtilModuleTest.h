@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include "Tests/Models/TypeConvertorTest.h"
+#include "Tests/Models/StringHelperTest.h"
 
 class UtilModuleTest {
 public:

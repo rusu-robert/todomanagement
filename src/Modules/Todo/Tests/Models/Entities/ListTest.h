@@ -8,7 +8,7 @@
 #ifndef LISTTEST_H_
 #define LISTTEST_H_
 
-#include "../../Models/List.h"
+#include "../../../Models/Entities/List.h"
 #include <assert.h>
 
 using namespace std;

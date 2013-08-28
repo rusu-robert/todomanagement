@@ -19,6 +19,10 @@ string TypeConvertor::convertIntToString(int number) {
 	return theNumberString;
 }
 
+int TypeConvertor::convertStringToInt(string str) {
+	return atoi(str.c_str());
+}
+
 TypeConvertor::~TypeConvertor() {
 	// TODO Auto-generated destructor stub
 }

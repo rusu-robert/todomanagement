@@ -6,7 +6,7 @@
  */
 
 #include "List.h"
-#include "../../Util/Models/TypeConvertor.h"
+#include "../../../Util/Models/TypeConvertor.h"
 
 List::List() {
 	this->id = NULL;

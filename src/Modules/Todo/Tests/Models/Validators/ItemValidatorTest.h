@@ -8,8 +8,8 @@
 #ifndef ITEMVALIDATORTEST_H_
 #define ITEMVALIDATORTEST_H_
 
-#include "../../Models/ItemValidator.h"
-#include "../../Models/Item.h"
+#include "../../../Models/Validators/ItemValidator.h"
+#include "../../../Models/Entities/Item.h"
 #include <assert.h>
 
 using namespace std;
