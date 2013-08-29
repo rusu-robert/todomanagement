@@ -38,6 +38,8 @@ public:
 
 	void removeItem(int idList, int idItem) throw (NotFoundException);
 
+	vector<List*>* getLists();
+
 	virtual ~ListController();
 };
 

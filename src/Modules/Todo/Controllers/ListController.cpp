@@ -77,6 +77,10 @@ void ListController::removeItem(int idList, int idItem) throw (NotFoundException
 	this->listRepository->findById(idList)->deleteItem(idItem);
 }
 
+vector<List*>* ListController::getLists() {
+	return this->listRepository->getLists();
+}
+
 ListController::~ListController() {
 	// TODO Auto-generated destructor stub
 }
