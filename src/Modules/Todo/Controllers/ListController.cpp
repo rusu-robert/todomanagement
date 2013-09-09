@@ -81,6 +81,9 @@ vector<List*>* ListController::getLists() {
 	return this->listRepository->getLists();
 }
 
+List* ListController::findById(int id ) {
+	return this->listRepository->findById(id);
+}
 ListController::~ListController() {
 	// TODO Auto-generated destructor stub
 }

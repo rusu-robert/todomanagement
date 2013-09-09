@@ -19,9 +19,21 @@ private:
 
     QLayout* mainLayout;
 
+    QTableWidget* tableOfItems;
+
+    QComboBox* listsSelector;
+
     void initLeftPart();
 
     void initRightPart();
+
+    void initTableOfItems();
+
+    void initListsSelector();
+
+    void initItemForm();
+
+    void populateTableOfItems(List* list);
 
     void alertMessage(string message);
 

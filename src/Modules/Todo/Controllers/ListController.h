@@ -40,6 +40,8 @@ public:
 
 	vector<List*>* getLists();
 
+	List* findById(int id);
+
 	virtual ~ListController();
 };
 
