@@ -84,9 +84,26 @@ vector<List*>* ListController::getLists() {
 	return this->listRepository->getLists();
 }
 
+List* ListController::getTheListInWhichItemByGivenIdExists(int id)  throw (NotFoundException) {
+	vector<List*>* lists = this->getLists();
+	for(int i = 0; i < lists->size(); i++) {
+		List* list = (*lists)[i];
+		vector<Item*>* items = list->getItems();
+		for(int j = 0; j < items->size(); j++) {
+			Item* item = (*items)[j];
+			if (item->getId() == id) {
+				return list;
+				break;
+			}
+		}
+	}
+	throw NotFoundException("Item with given id does not exist");
+}
+
 List* ListController::findById(int id ) {
 	return this->listRepository->findById(id);
 }
+
 ListController::~ListController() {
 	// TODO Auto-generated destructor stub
 }

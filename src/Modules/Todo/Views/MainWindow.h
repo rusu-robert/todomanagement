@@ -7,6 +7,7 @@
 #include <vector>
 #include "../Models/Entities/List.h"
 #include <iostream>
+#include "../../Util/Models/TypeConvertor.h"
 
 using namespace std;
 
@@ -37,6 +38,8 @@ private:
 
     QWidget* itemForm;
 
+    QSignalMapper *signalMapper;
+
     void initLeftPart();
 
     void initRightPart();
@@ -58,7 +61,7 @@ private slots:
 
 	void addItem();
 
-	void removeItem(int idList, int id);
+	void removeItem(int itemId);
 
 public:
     MainWindow(ListController* listController, QWidget *parent = 0);

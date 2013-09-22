@@ -31,6 +31,8 @@ void MainWindow::initTableOfItems()  {
 void MainWindow::populateTableOfItems(List* list) {
 	vector<Item*>* items = list->getItems();
 	this->tableOfItems->setRowCount(items->size());
+	this->signalMapper = new QSignalMapper(this);
+
 	for(int i = 0; i < items->size(); i++) {
 		Item* item = (*items)[i];
 		QString itemName = QString::fromStdString(item->getName());
@@ -49,12 +51,12 @@ void MainWindow::populateTableOfItems(List* list) {
 		this->tableOfItems->setItem(i, 2, isCompletedCell);
 
 		QPushButton* removeButton = new QPushButton("Remove");
-		QObject::connect(removeButton, SIGNAL(clicked()),
-				this,
-				SLOT(removeItem(list->getId(),item->getId())));
+		cout<<connect(removeButton, SIGNAL(clicked()), signalMapper, SLOT(map()));
+		signalMapper->setMapping(removeButton, item->getId());
 		this->tableOfItems->setCellWidget(i, 3, removeButton);
-
 	}
+
+	connect(signalMapper, SIGNAL(mapped(int)), this, SLOT(removeItem(int)));
 }
 
 void MainWindow::initRightPart() {
@@ -112,8 +114,6 @@ void MainWindow::initListsSelector() {
 	QObject::connect(this->listsSelector, SIGNAL(currentIndexChanged(int)), this, SLOT(selectedListChanged()));
 }
 
-
-
 void MainWindow::selectedListChanged() {
 	int index = this->listsSelector->currentIndex();
 	QString inputId = this->listsSelector->itemData(index).toString();
@@ -149,13 +149,11 @@ void MainWindow::addItem() {
 	}
 }
 
-void MainWindow::removeItem(int idList, int id) {
-	alertMessage("remove test");
-	this->listController->removeItem(idList, id);
-
-
+void MainWindow::removeItem(int itemId) {
+	List* list = this->listController->getTheListInWhichItemByGivenIdExists(itemId);
+	list->deleteItem(itemId);
+	this->populateTableOfItems(list);
 }
-
 
 void MainWindow::alertMessage(string message) {
 	QMessageBox* alert = new QMessageBox();

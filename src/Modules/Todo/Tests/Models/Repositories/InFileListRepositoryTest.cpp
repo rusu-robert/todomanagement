@@ -33,32 +33,34 @@ void InFileListRepositoryTest::runTests() {
 }
 
 void InFileListRepositoryTest::testConstructorWithParameters() {
-	InFileListRepository* inFileListRepository = new InFileListRepository("name");
-	assert(inFileListRepository->getFileName() == "name");
+	InFileListRepository* inFileListRepository = new InFileListRepository("inFileListRepositoryDatabase.txt");
+	assert(inFileListRepository->getFileName() == "inFileListRepositoryDatabase.txt");
 	delete inFileListRepository;
 }
 
 void InFileListRepositoryTest::testAdd() {
-	InFileListRepository* inFileListRepository = new InFileListRepository("fileName");
+	InFileListRepository* inFileListRepository = new InFileListRepository("inFileListRepositoryDatabase.txt");
 	List* list = new List(1, "listName");
 	inFileListRepository->add(1, "listName");
 	assert(inFileListRepository->getNumberOfLists() == 1 );
 	delete list;
 	delete inFileListRepository;
+	unlink("inFileListRepositoryDatabase.txt");
 }
 
 void InFileListRepositoryTest::testEdit() {
-	InFileListRepository* inFileListRepository = new InFileListRepository("fileName");
+	InFileListRepository* inFileListRepository = new InFileListRepository("inFileListRepositoryDatabase.txt");
 	List* list = new List(1, "listName");
 	inFileListRepository->add(1, "listName");
 	inFileListRepository->edit(1, "modifiedName");
 	assert(inFileListRepository->findById(1)->getName() == "modifiedName" );
 	delete list;
 	delete inFileListRepository;
+	unlink("inFileListRepositoryDatabase.txt");
 }
 
 void InFileListRepositoryTest::testRemove() {
-	InFileListRepository* inFileListRepository = new InFileListRepository("fileName");
+	InFileListRepository* inFileListRepository = new InFileListRepository("inFileListRepositoryDatabase.txt");
 	List* firstList = new List(1, "firstListName");
 	List* secondList = new List(2, "secondListName");
 	inFileListRepository->add(1, "firstListName");
@@ -68,11 +70,11 @@ void InFileListRepositoryTest::testRemove() {
 	delete secondList;
 	delete firstList;
 	delete inFileListRepository;
-
+	unlink("inFileListRepositoryDatabase.txt");
 }
 
 void InFileListRepositoryTest::testWriteInFile() {
-	InFileListRepository* inFileListRepository = new InFileListRepository("testWriteInFile.txt");
+	InFileListRepository* inFileListRepository = new InFileListRepository("inFileListRepositoryDatabase.txt");
 	inFileListRepository->add(1,"list name");
 	List* list = inFileListRepository->findById(1);
 	list->addItem(1, "name", "description", true);
@@ -96,13 +98,12 @@ void InFileListRepositoryTest::testWriteInFile() {
 		assert(false);
 	}
 	fin.close();
-	unlink(inFileListRepository->getFileName().c_str());
 	delete inFileListRepository;
-
+	unlink("inFileListRepositoryDatabase.txt");
 }
 
 void InFileListRepositoryTest::testReadFromFile() {
-	InFileListRepository* repository = new InFileListRepository("testReadFromFile.txt");
+	InFileListRepository* repository = new InFileListRepository("inFileListRepositoryDatabase.txt");
 	fstream fout(repository->getFileName().c_str(), ios::out);
 	List* firstList = new List(1, "name");
 	firstList->addItem(1, "someName", "description", true);
@@ -121,8 +122,8 @@ void InFileListRepositoryTest::testReadFromFile() {
 	assert(firstListFound->getName() == "name");
 	assert(firstListFound->getNumberOfItems() == 3);
 
-	unlink(repository->getFileName().c_str());
 	delete repository;
+	unlink("inFileListRepositoryDatabase.txt");
 }
 
 InFileListRepositoryTest::~InFileListRepositoryTest() {

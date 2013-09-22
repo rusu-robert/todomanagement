@@ -102,8 +102,6 @@ void ListControllerTest::testRemoveItem() {
 	assert(listRepository->findById(1)->getNumberOfItems() == 1);
 	delete listController;
 	delete listRepository;
-
-
 }
 
 void ListControllerTest::runTests() {
@@ -127,7 +125,6 @@ void ListControllerTest::runTests() {
 
 	this->testRemoveItem();
 	cout<<"ListControllerTest::testRemoveItem OK"<<endl;
-
 }
 
 ListControllerTest::~ListControllerTest() {

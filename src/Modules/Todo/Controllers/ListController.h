@@ -43,9 +43,11 @@ public:
 
 	void removeItem(int idList, int idItem) throw (NotFoundException);
 
-	vector<List*>* getLists();
+	List* getTheListInWhichItemByGivenIdExists(int id) throw (NotFoundException);
 
 	List* findById(int id);
+
+	vector<List*>* getLists();
 
 	virtual ~ListController();
 };
