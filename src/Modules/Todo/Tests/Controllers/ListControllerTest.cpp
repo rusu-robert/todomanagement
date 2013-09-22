@@ -66,6 +66,15 @@ void ListControllerTest::testAddItem() {
 	ListController* listController = new ListController(listRepository);
 	listController->addItem(1, "name", "description", true);
 	assert(listRepository->findById(1)->getNumberOfItems() == 1);
+	listController->addItem(1, "name1", "description1", true);
+	assert(listRepository->findById(1)->getNumberOfItems() == 2);
+
+	listController->addItem(2, "name3", "description3", false);
+	assert(listRepository->findById(2)->getNumberOfItems() == 1);
+
+	listController->addItem(2, "name4", "description4", false);
+	assert(listRepository->findById(2)->getNumberOfItems() == 2);
+
 	delete listController;
 	delete listRepository;
 }

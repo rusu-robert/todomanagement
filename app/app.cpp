@@ -25,11 +25,11 @@ void runTests() {
 int main(int argc, char *argv[]) {
 	runTests();
 	QApplication a(argc, argv);
-	InFileListRepository* inFileListRepository = new InFileListRepository("database.txt");
-	inFileListRepository->readFromFile();
-	ListController* listController = new ListController(inFileListRepository);
-	MainWindow* window = new MainWindow(listController);
-	window->show();
+	InFileListRepository inFileListRepository("database.txt");
+	inFileListRepository.readFromFile();
+	ListController listController(&inFileListRepository);
+	MainWindow window(&listController);
+	window.show();
 	return a.exec();
 }
 

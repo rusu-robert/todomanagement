@@ -23,6 +23,20 @@ private:
 
     QComboBox* listsSelector;
 
+    QLabel* itemFormNameLabel;
+
+    QLineEdit* itemFormNameInput;
+
+    QLabel* itemFormDescriptionLabel;
+
+    QLineEdit* itemFormDescriptionInput;
+
+    QPushButton* addItemButton;
+
+    QCheckBox* itemFormIsCompleted;
+
+    QWidget* itemForm;
+
     void initLeftPart();
 
     void initRightPart();
@@ -37,8 +51,14 @@ private:
 
     void alertMessage(string message);
 
+    void clearFormItem();
+
 private slots:
 	void selectedListChanged();
+
+	void addItem();
+
+	void removeItem(int idList, int id);
 
 public:
     MainWindow(ListController* listController, QWidget *parent = 0);

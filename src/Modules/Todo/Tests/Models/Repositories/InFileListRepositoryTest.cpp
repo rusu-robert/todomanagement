@@ -43,7 +43,6 @@ void InFileListRepositoryTest::testAdd() {
 	List* list = new List(1, "listName");
 	inFileListRepository->add(1, "listName");
 	assert(inFileListRepository->getNumberOfLists() == 1 );
-	unlink(inFileListRepository->getFileName().c_str());
 	delete list;
 	delete inFileListRepository;
 }
@@ -54,7 +53,6 @@ void InFileListRepositoryTest::testEdit() {
 	inFileListRepository->add(1, "listName");
 	inFileListRepository->edit(1, "modifiedName");
 	assert(inFileListRepository->findById(1)->getName() == "modifiedName" );
-	unlink(inFileListRepository->getFileName().c_str());
 	delete list;
 	delete inFileListRepository;
 }
@@ -67,7 +65,6 @@ void InFileListRepositoryTest::testRemove() {
 	inFileListRepository->add(2, "secondListName");
 	inFileListRepository->remove(1);
 	assert(inFileListRepository->getNumberOfLists() == 1 );
-	unlink(inFileListRepository->getFileName().c_str());
 	delete secondList;
 	delete firstList;
 	delete inFileListRepository;

@@ -23,8 +23,8 @@ void MainWindow::initTableOfItems()  {
 	vector<List*>* lists = this->listController->getLists();
 	List* firstList = lists->front();
 	this->tableOfItems = new QTableWidget();
-	this->tableOfItems->setColumnCount(3);
-	this->tableOfItems->setHorizontalHeaderLabels(QString("Name;Description;Is completed").split(";"));
+	this->tableOfItems->setColumnCount(4);
+	this->tableOfItems->setHorizontalHeaderLabels(QString("Name;Description;Is completed;Action").split(";"));
 	this->populateTableOfItems(firstList);
 }
 
@@ -47,18 +47,59 @@ void MainWindow::populateTableOfItems(List* list) {
 		}
 		QTableWidgetItem* isCompletedCell = new QTableWidgetItem(itemIsCompleted);
 		this->tableOfItems->setItem(i, 2, isCompletedCell);
+
+		QPushButton* removeButton = new QPushButton("Remove");
+		QObject::connect(removeButton, SIGNAL(clicked()),
+				this,
+				SLOT(removeItem(list->getId(),item->getId())));
+		this->tableOfItems->setCellWidget(i, 3, removeButton);
+
 	}
 }
 
 void MainWindow::initRightPart() {
 	QVBoxLayout* rightLayout = new QVBoxLayout();
 	QWidget* rightPart = new QWidget();
-	initListsSelector();
+	this->initListsSelector();
 	rightLayout->addWidget(this->listsSelector);
+
+	this->initItemForm();
+	rightLayout->addWidget(this->itemForm);
+
 	rightPart->setLayout(rightLayout);
 
 	this->mainLayout->addWidget(rightPart);
 
+}
+
+void MainWindow::initItemForm() {
+	this->itemFormNameLabel = new QLabel("Name: ");
+	this->itemFormNameInput = new QLineEdit();
+	this->itemFormNameLabel->setBuddy(this->itemFormNameInput);
+
+	this->itemFormDescriptionLabel = new QLabel("Description: ");
+	this->itemFormDescriptionInput = new QLineEdit();
+	this->itemFormDescriptionLabel->setBuddy(this->itemFormDescriptionInput);
+
+	this->addItemButton = new QPushButton("Add item");
+	QObject::connect(this->addItemButton, SIGNAL(clicked()), this, SLOT(addItem()));
+
+	this->itemFormIsCompleted = new QCheckBox("Is completed?");
+
+	QGridLayout* gridLayout = new QGridLayout();
+
+	gridLayout->addWidget(itemFormNameLabel, 0, 0);
+	gridLayout->addWidget(itemFormNameInput, 0, 1);
+
+	gridLayout->addWidget(itemFormDescriptionLabel, 1, 0);
+	gridLayout->addWidget(itemFormDescriptionInput, 1, 1);
+
+	gridLayout->addWidget(itemFormIsCompleted, 2, 0);
+
+	gridLayout->addWidget(addItemButton, 3, 0);
+
+	this->itemForm = new QWidget();
+	this->itemForm->setLayout(gridLayout);
 }
 
 void MainWindow::initListsSelector() {
@@ -81,10 +122,46 @@ void MainWindow::selectedListChanged() {
 	this->populateTableOfItems(list);
 }
 
+void MainWindow::clearFormItem() {
+	itemFormNameInput->setText("");
+	itemFormDescriptionInput->setText("");
+	itemFormIsCompleted->setChecked(false);
+}
+
+void MainWindow::addItem() {
+	QString inputName = itemFormNameInput->text();
+	QString inputDescription = itemFormDescriptionInput->text();
+
+	int listIndex = this->listsSelector->currentIndex();
+	int listId  = this->listsSelector->itemData(listIndex).toInt();
+	bool inputIsCompleted = this->itemFormIsCompleted->isChecked();
+	try {
+		listController->addItem(
+						listId,
+						inputName.toStdString(),
+						inputDescription.toStdString(),
+						inputIsCompleted
+				);
+		clearFormItem();
+		populateTableOfItems(listController->findById(listId));
+	}catch(Exception& exception) {
+		this->alertMessage(exception.getMessage());
+	}
+}
+
+void MainWindow::removeItem(int idList, int id) {
+	alertMessage("remove test");
+	this->listController->removeItem(idList, id);
+
+
+}
+
+
 void MainWindow::alertMessage(string message) {
-	QMessageBox messageBox;
-	messageBox.setText(QString::fromStdString(message));
-	messageBox.show();
+	QMessageBox* alert = new QMessageBox();
+	QString qMessage = QString::fromStdString(message);
+	alert->setText(qMessage);
+	alert->exec();
 }
 
 MainWindow::~MainWindow()

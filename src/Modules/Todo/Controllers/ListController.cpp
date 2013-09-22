@@ -23,10 +23,12 @@ int ListController::generateIdForItem() {
 	int nextId = 0;
 	vector<List*>* lists = this->listRepository->getLists();
 	for (int i=0; i<lists->size(); i++) {
-		vector<Item*>* items = (*lists)[i]->getItems();
+		List* list = (*lists)[i];
+		vector<Item*>* items = list->getItems();
 		for(int j=0; j<items->size(); j++) {
-			if ((*items)[i]->getId() > nextId) {
-				nextId = (*items)[i]->getId();
+			Item* item = (*items)[j];
+			if (item->getId() > nextId) {
+				nextId = item->getId();
 			}
 		}
 	}
@@ -59,7 +61,8 @@ void ListController::edit(int id, string name) throw (NotFoundException,Validati
 void ListController::addItem(int idList, string name, string description, bool isCompleted) throw (NotFoundException, ValidationException) {
 	ItemValidator* itemValidator = new ItemValidator();
 	itemValidator->validate(name);
-	this->listRepository->findById(idList)->addItem(generateIdForItem(), name, description, isCompleted);
+	List* list = this->listRepository->findById(idList);
+	list->addItem(generateIdForItem(), name, description, isCompleted);
 	delete itemValidator;
 }
 
