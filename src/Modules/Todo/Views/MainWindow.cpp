@@ -51,7 +51,7 @@ void MainWindow::populateTableOfItems(List* list) {
 		this->tableOfItems->setItem(i, 2, isCompletedCell);
 
 		QPushButton* removeButton = new QPushButton("Remove");
-		cout<<connect(removeButton, SIGNAL(clicked()), signalMapper, SLOT(map()));
+		connect(removeButton, SIGNAL(clicked()), signalMapper, SLOT(map()));
 		signalMapper->setMapping(removeButton, item->getId());
 		this->tableOfItems->setCellWidget(i, 3, removeButton);
 	}
